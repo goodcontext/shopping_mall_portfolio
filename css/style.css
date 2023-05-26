@@ -1458,12 +1458,15 @@ header {
 .m-accessories__video-container video {
   width: 100%;
   height: 100%;
+  position: absolute;
+  z-index: 15;
 }
 
 .m-accessories__video-container img {
   width: 100%;
   height: 100%;
   position: absolute;
+  left: 0;
 }
 
 .m-life-wrap {
@@ -1474,6 +1477,8 @@ header {
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
+  margin-top: 10rem;
 }
 
 .m-life__title {
