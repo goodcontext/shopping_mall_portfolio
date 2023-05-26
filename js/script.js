@@ -9,8 +9,11 @@ const $mLeftArrow = document.querySelector(`.m-left-arrow`);
 const $mSearchInputbox = document.querySelector(`.m-search-input__inputbox`);
 
 let mTopWrapClickedBefore = true;
+let mSearchScreenMenuIsOpen = false;
 
 function mSearchScreenActive(e) {
+  mSearchScreenMenuIsOpen = true;
+  
   $mSearchWrap.classList.add(`active`);
 
   if (e.target.parentNode.classList.contains(`is-top`)) {
@@ -25,6 +28,8 @@ function mSearchScreenActive(e) {
 }
 
 function mTopWrapActive() {
+  mSearchScreenMenuIsOpen = false;
+
   $mTopWrap.classList.add(`active`);
   $mSearchWrap.classList.remove(`active`);
 
@@ -32,6 +37,8 @@ function mTopWrapActive() {
 }
 
 function mMenuContainerActive() {
+  mSearchScreenMenuIsOpen = true;
+
   $mMenuWrap.classList.add(`active`);
   $mSearchWrap.classList.remove(`active`);
   $wrap.classList.add(`disable-scroll`);
@@ -39,10 +46,14 @@ function mMenuContainerActive() {
 
 function mMenuScreenToggle(e) {
   if (e.target.parentNode.classList.contains(`is-top`)) {
+    mSearchScreenMenuIsOpen = true;
+
     $mMenuWrap.classList.add(`active`);
     $mTopWrap.classList.remove(`active`);
     $wrap.classList.add(`disable-scroll`);
   } else {
+    mSearchScreenMenuIsOpen = false;
+
     $mTopWrap.classList.add(`active`);
     $mMenuWrap.classList.remove(`active`);
     $wrap.classList.remove(`disable-scroll`);
@@ -75,6 +86,16 @@ $mHamburgerIcon.forEach(element => {
 
 $mSearchInputbox.addEventListener(`focus`, inputboxPlaceholderFocus);
 $mSearchInputbox.addEventListener(`blur`, inputboxPlaceholderBlur);
+
+window.addEventListener(`resize`, function(e) {
+  if (this.window.matchMedia(`(min-width: 768px)`).matches && $wrap.classList.contains(`disable-scroll`)) {
+    $wrap.classList.remove(`disable-scroll`);
+  } else if (this.window.matchMedia(`(max-width: 767px)`).matches && mSearchScreenMenuIsOpen === true) {
+    $wrap.classList.add(`disable-scroll`);
+  } else {
+    // Notning.
+  }
+})
 
 //mobile top wrap bottom header
 const $mBottomHeaderMenuItem = document.querySelectorAll(`.m-bottom-header__menu-item`);

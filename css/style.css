@@ -403,9 +403,9 @@ header {
 
 .m-search-wrap {
   width: 100%;
-  height: 740px;
-  height: 74rem;
+  height: 100%;
   position: fixed;
+  top: 0;
   display: none;
   background-color: #fff;
   z-index: 10;
@@ -967,13 +967,13 @@ header {
 }
 
 .m-menu-wrap {
-  width: 360px;
-  width: 36rem;
-  height: 740px;
-  height: 74rem;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  overflow-y: auto;
   display: none;
   background-color: #fff;
-  position: fixed;
   z-index: 15;
 }
 
@@ -994,6 +994,8 @@ header {
   justify-content: space-around;
   padding-top: 24px;
   padding-top: 2.4rem;
+  padding-bottom: 24px;
+  padding-bottom: 2.4rem;
   gap: 150px;
   gap: 15rem;
   flex-wrap: nowrap;
