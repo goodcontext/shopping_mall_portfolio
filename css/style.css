@@ -71,23 +71,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1319px) {
-  body {
-    width: 1920px;
-    width: 192rem;
-    overflow-x: hidden;
-  }
-}
-
-@media (min-width: 1320px) and (max-width: 1919px) {
-  body {
-    max-width: 1920px;
-    max-width: 192rem;
-    overflow-x: hidden;
-  }
-}
-
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
   body {
     max-width: 1920px;
     max-width: 192rem;
@@ -642,7 +626,7 @@ header {
   background: transparent;
 }
 
-.m-recent-search__context-menu > ul button p {
+.m-recent-search__context-menu > ul button span {
   font-family: 'Noto Sans KR', '맑은 고딕', sans-serif;
   font-size: 18px;
   font-size: 1.8rem;
@@ -650,7 +634,7 @@ header {
   color: #929292;
 }
 
-.m-recent-search__context-menu > ul > li:last-child button p {
+.m-recent-search__context-menu > ul > li:last-child button span {
   color: #171717;
 }
 

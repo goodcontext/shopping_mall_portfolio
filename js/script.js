@@ -1,6 +1,5 @@
 // mobile search screen & menu screen
 const $wrap = document.querySelector(`#wrap`);
-const $mainMobile = document.querySelector(`#main-mobile`);
 const $mTopWrap = document.querySelector(`.m-top-wrap`);
 const $mSearchWrap = document.querySelector(`.m-search-wrap`);
 const $mMenuWrap = document.querySelector(`.m-menu-wrap`);
@@ -22,31 +21,31 @@ function mSearchScreenActive(e) {
     $mMenuWrap.classList.remove(`active`);
   }
 
-  $mainMobile.classList.add(`disable-scroll`);
+  $wrap.classList.add(`disable-scroll`);
 }
 
 function mTopWrapActive() {
   $mTopWrap.classList.add(`active`);
   $mSearchWrap.classList.remove(`active`);
 
-  $mainMobile.classList.remove(`disable-scroll`);
+  $wrap.classList.remove(`disable-scroll`);
 }
 
 function mMenuContainerActive() {
   $mMenuWrap.classList.add(`active`);
   $mSearchWrap.classList.remove(`active`);
-  $mainMobile.classList.add(`disable-scroll`);
+  $wrap.classList.add(`disable-scroll`);
 }
 
 function mMenuScreenToggle(e) {
   if (e.target.parentNode.classList.contains(`is-top`)) {
     $mMenuWrap.classList.add(`active`);
     $mTopWrap.classList.remove(`active`);
-    $mainMobile.classList.add(`disable-scroll`);
+    $wrap.classList.add(`disable-scroll`);
   } else {
     $mTopWrap.classList.add(`active`);
     $mMenuWrap.classList.remove(`active`);
-    $mainMobile.classList.remove(`disable-scroll`);
+    $wrap.classList.remove(`disable-scroll`);
   }
 }
 
