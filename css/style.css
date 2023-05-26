@@ -1749,7 +1749,7 @@ header {
   width: 2.4rem;
   height: 24px;
   height: 2.4rem;
-  filter: grayscale();
+  filter: grayscale(100%);
 }
 
 .m-footer-real-copyright {
