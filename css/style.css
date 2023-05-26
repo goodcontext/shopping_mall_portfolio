@@ -1838,8 +1838,8 @@ header {
   position: fixed;
   top: calc(14px + 50px);
   top: calc(1.4rem + 5rem);
-  margin-left: calc((100vw - 1280px) / 2);
-  margin-left: calc((100vw - 128rem) / 2);
+  left: calc((100vw - 1280px) / 2);
+  left: calc((100vw - 128rem) / 2);
   z-index: 15;
 }
 
@@ -1869,8 +1869,8 @@ header {
   position: fixed;
   top: calc(20px + 50px);
   top: calc(2rem + 5rem);
-  margin-left: calc(((100vw - 1280px) / 2) + 675px);
-  margin-left: calc(((100vw - 128rem) / 2) + 67.5rem);
+  left: calc(((100vw - 1280px) / 2) + 675px);
+  left: calc(((100vw - 128rem) / 2) + 67.5rem);
   border-bottom: 1.8px solid #6a6a6a;
   border-bottom: .18rem solid #6a6a6a;
   z-index: 18;
@@ -2157,8 +2157,8 @@ header {
   position: absolute;
   top: -215px;
   top: -21.5rem;
-  margin-left: calc((-1) * ((100vw - 1280px) / 2));
-  margin-left: calc((-1) * ((100vw - 128rem) / 2));
+  left: calc((-1) * ((100vw - 1280px) / 2));
+  left: calc((-1) * ((100vw - 128rem) / 2));
 }
 
 .header-desktop.fixed .top-nav-area--mouse-enter {
@@ -2224,8 +2224,8 @@ header {
   position: fixed;
   top: calc(25px + 50px);
   top: calc(2.5rem + 5rem);
-  margin-left: calc(((100vw - 1280px) / 2) + 170px);
-  margin-left: calc(((100vw - 128rem) / 2) + 17rem);
+  left: calc(((100vw - 1280px) / 2) + 170px);
+  left: calc(((100vw - 128rem) / 2) + 17rem);
   gap: 24px;
   gap: 2.4rem;
   z-index: 16;
@@ -2960,8 +2960,8 @@ header {
   top: 45px;
   top: 4.5rem;
   position: relative;
-  margin-left: calc((-1) * ((100vw - 1280px) / 2));
-  margin-left: calc((-1) * ((100vw - 128rem) / 2));
+  left: calc((-1) * ((100vw - 1280px) / 2));
+  left: calc((-1) * ((100vw - 128rem) / 2));
   display: flex;
   justify-content: center;
 }
@@ -3265,8 +3265,8 @@ header {
   position: relative;
   top: 185px;
   top: 18.5rem;
-  margin-left: calc((-1) * ((100vw - 1280px) / 2));
-  margin-left: calc((-1) * ((100vw - 128rem) / 2));
+  left: calc((-1) * ((100vw - 1280px) / 2));
+  left: calc((-1) * ((100vw - 128rem) / 2));
   background-color: #f8f8f8;
 }
 
@@ -3475,8 +3475,8 @@ header {
   height: 50px;
   height: 5rem;
   position: relative;
-  margin-left: calc((-1) * ((100vw - 1280px) / 2));
-  margin-left: calc((-1) * ((100vw - 128rem) / 2));
+  left: calc((-1) * ((100vw - 1280px) / 2));
+  left: calc((-1) * ((100vw - 128rem) / 2));
   border-top: 2.4px solid #171717;
   border-top: .24rem solid #171717;
 }
@@ -3519,8 +3519,8 @@ header {
   height: 250px;
   height: 25rem;
   position: relative;
-  margin-left: calc((-1) * ((100vw - 1280px) / 2));
-  margin-left: calc((-1) * ((100vw - 128rem) / 2));
+  left: calc((-1) * ((100vw - 1280px) / 2));
+  left: calc((-1) * ((100vw - 128rem) / 2));
   background-color: #f8f8f8;
 }
 
