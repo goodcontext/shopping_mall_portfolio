@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>shopping mall portfolio</title>
+
+  <link rel="preload" as="style" href="./css/reset.min.css">
+  <link rel="preload" as="style" href="./css/style.css">
+  <link rel="preload" as="script" href="./js/script.js">
+
+  <link rel="preload" as="font" type="font/woff2" href="./fonts/NewYork.woff2" crossorigin="use-credentials">
+  <link rel="preload" as="font" type="font/woff" href="./fonts/NewYork.woff" crossorigin="use-credentials">
+
+  <link rel="preload" as="image" href="./images/desktop/logo.png">
+  <link rel="preload" as="image" href="./images/icon/search_icon.png">
+  <link rel="preload" as="image" href="./images/icon/login_icon.png">
+  <link rel="preload" as="image" href="./images/icon/service_icon.png">
+  <link rel="preload" as="image" href="./images/icon/cart_icon.png">
+  <link rel="preload" as="image" href="./images/icon/right_angle_bracket_icon.png">
+
+  <link rel="preload" as="video" type="video/webm" href="./videos/desktop/beauty_woman.webm">
+  <link rel="preload" as="video" type="video/mp4" href="./videos/desktop/beauty_woman.mp4">
+  <link rel="preload" as="video" type="video/webm" href="./videos/desktop/flowers_woman.webm">
+  <link rel="preload" as="video" type="video/mp4" href="./videos/desktop/flowers_woman.mp4">
+  <link rel="preload" as="video" type="video/webm" href="./videos/desktop/art_woman.webm">
+  <link rel="preload" as="video" type="video/mp4" href="./videos/desktop/art_woman.mp4">
+  <link rel="preload" as="video" type="video/webm" href="./videos/desktop/girl_grandmother.webm">
+  <link rel="preload" as="video" type="video/mp4" href="./videos/desktop/girl_grandmother.mp4">
+  
+  <link rel="preload" as="image" href="./videos/desktop/beauty_woman_thumbnail.jpg">
+  <link rel="preload" as="image" href="./videos/desktop/flowers_woman_thumbnail.jpg">
+  <link rel="preload" as="image" href="./videos/desktop/art_woman_thumbnail.jpg">
+  <link rel="preload" as="image" href="./videos/desktop/girl_grandmother_thumbnail.jpg">
+
+  <link rel="preload" as="image" href="./images/desktop/nav_luxury_items_main.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_luxury_items_sub_left.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_luxury_items_sub_right.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_women's_clothing_main.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_women's_clothing_sub_left.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_women's_clothing_sub_right.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_men's_clothing_main.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_men's_clothing_sub_left.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_men's_clothing_sub_right.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_sports_leisure_main.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_sports_leisure_sub_left.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_sports_leisure_sub_right.jpg">
+  <link rel="preload" as="image" href="./images/desktop/nav_life_main.jpg">
+
+  <link href="./css/reset.min.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link href="./css/style.css" type="text/css" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+  <script src="./js/script.js" defer></script>
+</head>
+<body>
+  <div id="wrap">
+    <section class="m-section-intro section-mobile">
+      <h4 class="hide">Intro</h4>
+      <header class="m-header">
+        <div class="m-top-wrap active">
+          <div class="m-top-header">
+            <div class="m-logo">
+              <a href="javascript:void(0)">
+                <img src="./images/mobile/mobile_logo.png" alt="mobile logo">
+              </a>
+            </div>
+            <div class="m-right-menu-container">
+              <button class="m-search-icon is-top">
+                <img src="./images/icon/mobile_search_icon.png" alt="mobile search icon">
+              </button>
+              <button class="m-hamburger-icon is-top">
+                <img class="m-hamburger-icon--open" src="./images/icon/mobile_hamburger_open_icon.png" alt="mobile hamburger open">
+              </button>
+            </div>
+          </div>
+          <div class="m-bottom-header">
+            <ul class="m-bottom-header__menu-items">
+              <li class="m-bottom-header__menu-item active">
+                <a href="javascript:void(0)">
+                  <span>명품/잡화</span>
+                </a>
+              </li>
+              <li class="m-bottom-header__menu-item">
+                <a href="javascript:void(0)">
+                  <span>여성의류</span>
+                </a>
+              </li>
+              <li class="m-bottom-header__menu-item">
+                <a href="javascript:void(0)">
+                  <span>남성의류</span>
+                </a>
+              </li>
+              <li class="m-bottom-header__menu-item">
+                <a href="javascript:void(0)">
+                  <span>스포츠/레저</span>
+                </a>
+              </li>
+              <li class="m-bottom-header__menu-item">
+                <a href="javascript:void(0)">
+                  <span>라이프</span>
+                </a>
+              </li>
+            </ul>
+            <div class="toast-messages">
+              <p>컨텐츠가 적어서 탭 메뉴에 기능은 없습니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="m-search-wrap">
+          <div class="m-search-header">
+            <ul>
+              <li>
+                <button class="m-left-arrow">
+                  <img src="./images/icon/mobile_left_arrow.png" alt="mobile left arrow">
+                </button>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <img src="./images/mobile/mobile_logo.png" alt="mobile logo">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="m-search-container">
+            <ul>
+              <li>
+                <div class="m-search-input">
+                  <input type="text" class="m-search-input__inputbox" name="m-search-input" placeholder="최대 18% 멤버십 페이백">
+                  <button onclick="return false" class="m-search-input__button">
+                    <img src="./images/icon/mobile_search_icon.png" alt="mobile search">
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div class="m-recent-search-container">
+                  <div class="m-recent-search__title">
+                    <span>최근 검색어</span>
+                    <button class="m-recent-search__ellipsis">
+                      <img src="./images/icon/mobile_ellipsis_icon.png" alt="mobile ellipsis">
+                    </button>
+                  </div>
+                  <div class="m-recent-search__contents">
+                    <p>최근 검색어가 없습니다.</p>
+                    <div class="m-recent-search__context-menu">
+                      <ul>
+                        <li>
+                          <button onclick="return false">
+                            <p>선택 삭제</p>
+                          </button>
+                        </li>
+                        <li>
+                          <button onclick="return false">
+                            <p>전체 삭제</p>
+                          </button>
+                        </li>
+                        <li>
+                          <button onclick="return false">
+                            <p>자동저장 끄기</p>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="m-shopping-exhibition-container">
+                  <div class="m-shopping-exhibition__title">
+                    <p>쇼핑 기획전</p>
+                  </div>
+                  <div class="m-shopping-exhibition__contents">
+                    <ul class="m-shopping-exhibition__contents-slider">
+                      <li>
+                        <ul class="m-shopping-exhibition__contents-rows">
+                          <li>
+                            <a href="javascript:void(0)">
+                              <span>화끈한 혜택으로 채우는 여름파우치</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="javascript:void(0)">
+                              <span>다양한 컬러의 강렬한 유혹</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <ul class="m-shopping-exhibition__contents-rows">
+                          <li>
+                            <a href="javascript:void(0)">
+                              <span>바디-헤어-페이스 컬렉션</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="javascript:void(0)">
+                              <span>유럽 프리미엄 브랜드의 품격</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <ul class="m-shopping-exhibition__contents-rows">
+                          <li>
+                            <a href="javascript:void(0)">
+                              <span>다이버 워치에 우아함을 선사하다</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="m-top-searched-word-container">
+                  <div class="m-top-searched-word__title">
+                    <p>인기 검색어</p>
+                  </div>
+                  <div class="m-top-searched-word__contents">
+                    <div class="m-top-searched-word__swiper swiper">
+                      <ul class="m-top-searched-word__swiper-wrapper swiper-wrapper">
+                        <li class="m-top-searched-word__swiper-slide swiper-slide">
+                          <ul class="m-top-searched-word__rank-container">
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">1</span>
+                                <span class="m-top-searched-word__rank-word">브랜드 가방</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_horizontal_line.png" alt="mobile horizontal line">
+                                </span>
+                              </a>
+                            </li>
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">2</span>
+                                <span class="m-top-searched-word__rank-word">브랜드 퀼티드</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_up_arrow.png" alt="mobile up arrow">
+                                </span>
+                              </a>
+                            </li>
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">3</span>
+                                <span class="m-top-searched-word__rank-word">브랜드</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_down_arrow.png" alt="mobile down arrow">
+                                </span>
+                              </a>
+                            </li>
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">4</span>
+                                <span class="m-top-searched-word__rank-word">퀼티드</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_new_icon.png" alt="mobile new icon">
+                                </span>
+                              </a>
+                            </li>
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">5</span>
+                                <span class="m-top-searched-word__rank-word">Brand 가방</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_horizontal_line.png" alt="mobile horizontal line">
+                                </span>
+                              </a>
+                            </li>
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">6</span>
+                                <span class="m-top-searched-word__rank-word">브랜드 시계</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_horizontal_line.png" alt="mobile horizontal line">
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="m-top-searched-word__swiper-slide swiper-slide">
+                          <ul class="m-top-searched-word__rank-container">
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">7</span>
+                                <span class="m-top-searched-word__rank-word">브랜드 벨트</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_horizontal_line.png" alt="mobile horizontal line">
+                                </span>
+                              </a>
+                            </li>
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">8</span>
+                                <span class="m-top-searched-word__rank-word">향수</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_up_arrow.png" alt="mobile up arrow">
+                                </span>
+                              </a>
+                            </li>
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">9</span>
+                                <span class="m-top-searched-word__rank-word">시계</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_new_icon.png" alt="mobile new icon">
+                                </span>
+                              </a>
+                            </li>
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">10</span>
+                                <span class="m-top-searched-word__rank-word">Brand 벨트</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_down_arrow.png" alt="mobile down arrow">
+                                </span>
+                              </a>
+                            </li>
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">11</span>
+                                <span class="m-top-searched-word__rank-word">가방</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_up_arrow.png" alt="mobile up arrow">
+                                </span>
+                              </a>
+                            </li>
+                            <li class="m-top-searched-word__rank">
+                              <a href="javascript:void(0)">
+                                <span class="m-top-searched-word__rank-number">12</span>
+                                <span class="m-top-searched-word__rank-word">bag</span>
+                                <span class="m-top-searched-word__rank-step">
+                                  <img src="./images/icon/mobile_horizontal_line.png" alt="mobile horizontal line">
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <div class="m-top-searched-word__swiper-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="m-banner-container">
+                  <div class="m-banner__swiper swiper">
+                    <ul class="m-banner__swiper-wrapper swiper-wrapper">
+                      <li class="m-banner__swiper-slide m-banner__swiper-slide-left swiper-slide">
+                        <div class="m-banner__swiper-slide-title">
+                          <p>신규 회원을 위한</p>
+                          <p>10% + 10% 더블 쿠폰 혜택</p>
+                        </div>
+                        <div class="m-banner__swiper-slide-image m-banner__swiper-slide-image-left">
+                          <img src="./images/mobile/mobile_search_screen_banner_image_left.jpg" alt="mobile search screen banner image left">
+                        </div>
+                      </li>
+                      <li class="m-banner__swiper-slide m-banner__swiper-slide-right swiper-slide">
+                        <div class="m-banner__swiper-slide-title">
+                          <p>15% 쇼핑백 혜택</p>
+                          <p>PRE-SUMMER 준비하세요.</p>
+                        </div>
+                        <div class="m-banner__swiper-slide-image m-banner__swiper-slide-image-right">
+                          <img src="./images/mobile/mobile_search_screen_banner_image_right.jpg" alt="mobile search screen banner image right">
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="m-banner__swiper-pagination"></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="m-menu-wrap">
+          <div class="m-menu-header">
+            <div class="m-logo">
+              <a href="javascript:void(0)">
+                <img src="./images/mobile/mobile_logo.png" alt="mobile logo">
+              </a>
+            </div>
+            <div class="m-right-menu-container">
+              <button class="m-search-icon is-menu">
+                <img src="./images/icon/mobile_search_icon.png" alt="mobile search icon">
+              </button>
+              <button class="m-hamburger-icon is-menu">
+                <img class="m-hamburger-icon--close" src="./images/icon/mobile_hamburger_close_icon.png" alt="mobile hamburger close">
+              </button>
+            </div>
+          </div>
+          <div class="m-menu-container">
+            <div class="m-menu-left-container">
+              <ul class="m-menu-left-items">
+                <li class="m-menu-left-item is-luxury-items active">
+                  <a href="javascript:void(0)">
+                    <img src="./images/icon/mobile_luxury_icon.png" alt="mobile luxury icon">
+                    <span>명품/잡화</span>
+                  </a>
+                </li>
+                <li class="m-menu-left-item is-women-clothing">
+                  <a href="javascript:void(0)">
+                    <img src="./images/icon/mobile_women_clothing_icon.png" alt="mobile women clothing icon">
+                    <span>여성의류</span>
+                  </a>
+                </li>
+                <li class="m-menu-left-item is-men-clothing">
+                  <a href="javascript:void(0)">
+                    <img src="./images/icon/mobile_men_clothing_icon.png" alt="mobile men clothing icon">
+                    <span>남성의류</span>
+                  </a>
+                </li>
+                <li class="m-menu-left-item is-sports-leisure">
+                  <a href="javascript:void(0)">
+                    <img src="./images/icon/mobile_sports_leisure_icon.png" alt="mobile sports leisure icon">
+                    <span>스포츠/레저</span>
+                  </a>
+                </li>
+                <li class="m-menu-left-item is-life">
+                  <a href="javascript:void(0)">
+                    <img src="./images/icon/mobile_life_icon.png" alt="mobile life icon">
+                    <span>라이프</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="m-menu-right-container">
+              <ul>
+                <li>
+                  <ul class="m-menu-right-submenu__items is-luxury-items active">
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>핸드백/가방</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>슈즈</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>지갑/벨트</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>시계</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>악세서리</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="m-menu-right-submenu__items is-women-clothing">
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>티셔츠</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>셔츠/블라우스</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>니트웨어</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>팬츠/스커트</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>원피스</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>아우터</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>여성정장</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>가죽/모피</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>언더웨어/이지웨어</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="m-menu-right-submenu__items is-men-clothing">
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>티셔츠</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>셔츠/니트/가디건</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>팬츠</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>아우터</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>정장/수트</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>언더웨어/이지웨어</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="m-menu-right-submenu__items is-sports-leisure">
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>골프의류/용품</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>캠핑용품</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>등산/아웃도어</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>스포츠 슈즈/잡화</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="m-menu-right-submenu__items is-life">
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>거실/가구</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>홈데코</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>주방/조리기구</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>바디/욕실용품</p>
+                      </a>
+                    </li>
+                    <li class="m-menu-right-submenu__item">
+                      <a href="javascript:void(0)">
+                        <p>커피/와인/티</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="m-intro-video-wrap">
+        <div class="m-intro-video__swiper swiper">
+          <ul class="m-intro-video__swiper-wrapper swiper-wrapper">
+            <li class="m-intro-video__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <div class="m-intro-video__title">
+                  <p class="m-intro-video__title-main">햇살 머금은 Beauty Gift</p>
+                  <p class="m-intro-video__title-sub">가격대별 베스트 뷰티선물</p>
+                </div>
+                <div class="m-intro-video__video-container">
+                  <video muted loop autoplay>
+                    <source src="./videos/mobile/flowers_woman_mobile.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/mobile/flowers_woman_mobile_thumbnail.jpg" alt="flowers woman mobile thumbnail">
+                </div>
+              </a>
+            </li>
+            <li class="m-intro-video__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <div class="m-intro-video__title">
+                  <p class="m-intro-video__title-main">예술 작품 인테리어</p>
+                  <p class="m-intro-video__title-sub">그림 액자로 꾸미는 거실 인테리어</p>
+                </div>
+                <div class="m-intro-video__video-container">
+                  <video muted loop autoplay>
+                    <source src="./videos/mobile/art_woman_mobile.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/mobile/art_woman_mobile_thumbnail.jpg" alt="art woman mobile thumbnail">
+                </div>
+              </a>
+            </li>
+            <li class="m-intro-video__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <div class="m-intro-video__title">
+                  <p class="m-intro-video__title-main">Happy Children's Day</p>
+                  <p class="m-intro-video__title-sub">아이와 함께 행복한 어린이날</p>
+                </div>
+                <div class="m-intro-video__video-container">
+                  <video muted loop autoplay>
+                    <source src="./videos/mobile/girl_grandmother_mobile.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/mobile/girl_grandmother_mobile_thumbnail.jpg" alt="girl grandmother mobile thumbnail">
+                </div>
+              </a>
+            </li>
+            <li class="m-intro-video__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <div class="m-intro-video__title">
+                  <p class="m-intro-video__title-main">Luxury Gift Item</p>
+                  <p class="m-intro-video__title-sub">선물용 럭셔리 악세서리</p>
+                </div>
+                <div class="m-intro-video__video-container">
+                  <video muted loop autoplay>
+                    <source src="./videos/mobile/beauty_woman_mobile.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/mobile/beauty_woman_mobile_thumbnail.jpg" alt="beauty woman mobile thumbnail">
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="m-intro-video__swiper-pagination swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="m-section-new-arrival section-mobile">
+      <h4 class="hide">New Arrival</h4>
+      <div class="m-new-arrival-wrap">
+        <div class="m-new-arrival__title">
+          <p>New Arrival</p>
+        </div>
+        <div class="m-new-arrival__swiper swiper">
+          <ul class="m-new-arrival__swiper-wrapper swiper-wrapper">
+            <li class="m-new-arrival__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <div>
+                  <img src="./images/mobile/mobile_new_arrival_01.jpg" alt="mobile new arrival 01">
+                </div>
+                <div>
+                  <p class="m-new-arrival-slider__title">체인 백, 팬더 드 브랜드</p>
+                  <p class="m-new-arrival-slider__sub-title">브라운 송아지 가죽, 골드 피니싱</p>
+                </div>
+              </a>
+            </li>
+            <li class="m-new-arrival__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <div>
+                  <img src="./images/mobile/mobile_new_arrival_02.jpg" alt="mobile new arrival 02">
+                </div>
+                <div>
+                  <p class="m-new-arrival-slider__title">팬더 드 브랜드 워치</p>
+                  <p class="m-new-arrival-slider__sub-title">mini 모델, 쿼츠 무브먼트, 옐로우 골드</p>
+                </div>
+              </a>
+            </li>
+            <li class="m-new-arrival__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <div>
+                  <img src="./images/mobile/mobile_new_arrival_03.jpg" alt="mobile new arrival 03">
+                </div>
+                <div>
+                  <p class="m-new-arrival-slider__title">탱크 드 브랜드 벨트</p>
+                  <p class="m-new-arrival-slider__sub-title">블랙 소가죽, 골드 피니싱 버클</p>
+                </div>
+              </a>
+            </li>
+            <li class="m-new-arrival__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <div>
+                  <img src="./images/mobile/mobile_new_arrival_04.jpg" alt="mobile new arrival 04">
+                </div>
+                <div>
+                  <p class="m-new-arrival-slider__title">레 제르 드 퍼퓸 오드 뚜왈렛</p>
+                  <p class="m-new-arrival-slider__sub-title">75ml, 스프레이</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="m-new-arrival__swiper-pagination-progressbar swiper-pagination-progressbar"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="m-section-exclusives section-mobile">
+      <h4 class="hide">Exclusives</h4>
+      <div class="m-exclusives-wrap">
+        <div class="m-exclusives__title">
+          <p>Exclusives</p>
+        </div>
+        <div class="m-exclusives__swiper swiper">
+          <ul class="m-exclusives__swiper-wrapper swiper-wrapper">
+            <li class="m-exclusives__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="./images/mobile/mobile_exclusives_01.jpg" alt="mobile exclusives 01">
+              </a>
+            </li>
+            <li class="m-exclusives__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="./images/mobile/mobile_exclusives_02.jpg" alt="mobile exclusives 02">
+              </a>
+            </li>
+            <li class="m-exclusives__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="./images/mobile/mobile_exclusives_03.jpg" alt="mobile exclusives 03">
+              </a>
+            </li>
+            <li class="m-exclusives__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="./images/mobile/mobile_exclusives_04.jpg" alt="mobile exclusives 04">
+              </a>
+            </li>
+            <li class="m-exclusives__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="./images/mobile/mobile_exclusives_05.jpg" alt="mobile exclusives 05">
+              </a>
+            </li>
+            <li class="m-exclusives__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="./images/mobile/mobile_exclusives_06.jpg" alt="mobile exclusives 06">
+              </a>
+            </li>
+            <li class="m-exclusives__swiper-slide swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="./images/mobile/mobile_exclusives_07.jpg" alt="mobile exclusives 07">
+              </a>
+            </li>
+          </ul>
+          <div class="m-exclusives__swiper-pagination-progressbar swiper-pagination-progressbar"></div>
+          <div class="m-exclusives__swiper-button-next swiper-button-next"></div>
+          <div class="m-exclusives__swiper-button-prev swiper-button-prev"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="m-section-accessories section-mobile">
+      <h4 class="hide">Accessories</h4>
+      <div class="m-accessories-wrap">
+        <div class="m-accessories__title">
+          <p>Accessories</p>
+        </div>
+        <div class="m-accessories__video-container">
+          <video muted loop autoplay>
+            <source src="./videos/mobile/accessories_woman_mobile.mp4" type="video/mp4">
+          </video>
+          <img src="./videos/mobile/accessories_woman_mobile_thumbnail.jpg" alt="accessories woman mobile thumbnail">
+        </div>
+      </div>
+    </section>
+
+    <section class="m-section-life-culture section-mobile">
+      <h4 class="hide">Life&Culture</h4>
+      <div class="m-life-wrap">
+        <div class="m-life__title">
+          <p>Life&Culture</p>
+        </div>
+        <div class="m-life-container">
+          <div class="m-life-main-text">
+            <div class="m-life-main-text__title">
+              <p>라이프 스타일 브랜드</p>
+            </div>
+            <div class="m-life-main-text__sub-title">
+              <p>현대를 살아가는 한국인의</p>
+              <p>라이프스타일에 필요한 제품</p>
+            </div>
+            <div class="m-life-main-text__tag">
+              <a href="javascript:void(0)">
+                <span>#테디베어</span>
+              </a>
+              <a href="javascript:void(0)">
+                <span>#홈카페</span>
+              </a>
+            </div>
+          </div>
+          <div class="m-life__swiper swiper">
+            <ul class="m-life__swiper-wrapper swiper-wrapper">
+              <li class="m-life__swiper-slide swiper-slide large">
+                <a href="javascript:void(0)">
+                  <img src="./images/mobile/mobile_life&culture_main.jpg" alt="mobile life culture main">
+                </a>
+              </li>
+              <li class="m-life__swiper-slide swiper-slide medium">
+                <a href="javascript:void(0)">
+                  <img src="./images/mobile/mobile_life&culture_sub_01.jpg" alt="mobile life culture sub 01">
+                </a>
+              </li>
+              <li class="m-life__swiper-slide swiper-slide medium">
+                <a href="javascript:void(0)">
+                  <img src="./images/mobile/mobile_life&culture_sub_02.jpg" alt="mobile life culture sub 02">
+                </a>
+              </li>
+            </ul>
+            <div class="m-life__swiper-pagination swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-mobile">
+      <div class="m-footer-spacer"></div>
+      <div class="m-footer-top">
+        <ul>
+          <li>
+            <a href="javascript:void(0)">
+              <span>공지사항</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span>윤리경영</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span>사회공헌</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <span>이용약관</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="m-footer-details">
+        <ul>
+          <li>
+            <p>주식회사 브랜드 대표이사 : 홍길동 서울시 강남구 OOO로00길 00</p>
+          </li>
+          <li>
+            <p>사업자등록번호 : 000-000-000 [사업자정보 확인]</p>
+          </li>
+          <li>
+            <p>통신판매업신고 : 2010-서울강남-00000</p>
+          </li>
+          <li>
+            <p>홈페이지/앱 문의 : service@OOO.OOO 고객센터 : 0000-0000</p>
+          </li>
+          <li>
+            <p>호스팅서비스 : 브랜드</p>
+          </li>
+          <li>
+            <p>CopyrightⓒBrand All rights reserved.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="m-footer-social">
+        <ul>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="./images/icon/facebook_free_icon.png" alt="facebook icon">
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="./images/icon/twitter_free_icon.png" alt="twitter icon">
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="./images/icon/instagram_free_icon.png" alt="instagram icon">
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="./images/icon/youtube_free_icon.png" alt="youtube icon">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="m-footer-real-copyright">
+        <ul>
+          <li>
+            <p>퍼블리셔 신상호의 쇼핑몰 포트폴리오입니다.</p>
+          </li>
+          <li>
+            <p>더현대닷컴과 에스아이빌리지 사이트를 참고하여 리디자인했음을 말씀드립니다.</p>
+          </li>
+          <li>
+            <p>사용된 이미지와 동영상은 별도의 출처가 있음을 말씀드립니다.</p>
+          </li>
+          <li>
+            <p>CopyrightⓒShin Sang-Ho, All rights reserved.</p>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    
+    <section class="section-intro section-desktop">
+      <h4 class="hide">Intro</h4>
+      <header class="header-desktop">
+        <div class="top-container">
+          <div class="logo">
+            <a href="javascript:void(0)">
+              <img src="./images/desktop/logo.png" alt="logo">
+            </a>
+          </div>
+          <div class="search-input">
+            <input type="text" class="search-input__inputbox" name="search-input">
+            <button onclick="return false" class="search-input__button">
+              <img src="./images/icon/search_icon.png" alt="search icon">
+            </button>
+          </div>
+          <div class="right-menu-container">
+            <ul>
+              <li>
+                <a href="javascript:void(0)">
+                  <span class="right-menu__login">
+                    로그인/회원
+                  </span>
+                  <img class="right-menu__login-icon" src="./images/icon/login_icon.png" alt="login">
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span class="right-menu__service">
+                    고객센터
+                  </span>
+                  <img class="right-menu__service-icon" src="./images/icon/service_icon.png" alt="service">
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span class="right-menu__shopping-cart">
+                    장바구니
+                  </span>
+                  <div class="right-menu__cart-icon-wrap">
+                    <img class="right-menu__cart-icon" src="./images/icon/cart_icon.png" alt="cart">
+                    <span class="right-menu__cart-count">0</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span class="right-menu__shortcut">
+                    바로가기
+                  </span>
+                  <span class="right-menu__shortcut-icon">
+                    ON
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <nav class="gnb">
+          <div class="top-nav-area">
+            <div class="top-nav-area--mouse-enter"></div>
+            <div class="top-nav-area--mouse-event"></div>
+            <ul>
+              <li>
+                <a class="top-nav-area__ham" href="javascript:void(0)">
+                  <span>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 27 19" style="enable-background:new 0 0 27 19;" xml:space="preserve">
+                      <g>
+                        <g>
+                          <rect x="1" y="0.6" class="st0" width="25" height="1.8"/>
+                        </g>
+                        <g>
+                          <rect x="1" y="8.6" class="st0" width="25" height="1.8"/>
+                        </g>
+                        <g>
+                          <rect x="1" y="16.6" class="st0" width="25" height="1.8"/>
+                        </g>
+                      </g>
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>명품/잡화</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>여성의류</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>남성의류</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>스포츠/레저</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <span>라이프</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bottom-nav-area">
+            <div class="bottom-nav-area--line"></div>
+            <div class="bottom-left-nav-area">
+              <ul>
+                <li>
+                  <a href="javascript:void(0)">
+                    <span>명품/잡화</span>
+                    <span class="bottom-left-nav-area--hide"><img src="./images/icon/right_angle_bracket_icon.png" alt="right angle bracket icon"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">
+                    <span>여성의류</span>
+                    <span class="bottom-left-nav-area--hide"><img src="./images/icon/right_angle_bracket_icon.png" alt="right angle bracket icon"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">
+                    <span>남성의류</span>
+                    <span class="bottom-left-nav-area--hide"><img src="./images/icon/right_angle_bracket_icon.png" alt="right angle bracket icon"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">
+                    <span>스포츠/레저</span>
+                    <span class="bottom-left-nav-area--hide"><img src="./images/icon/right_angle_bracket_icon.png" alt="right angle bracket icon"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">
+                    <span>라이프</span>
+                    <span class="bottom-left-nav-area--hide"><img src="./images/icon/right_angle_bracket_icon.png" alt="right angle bracket icon"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bottom-right-nav-area">
+              <ul>
+                <li class="active">
+                  <div class="nav-luxury-items">
+                    <div class="sub-menu">
+                      <ul>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>핸드백/가방</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>슈즈</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>지갑/벨트</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>시계</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>악세서리</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="nav-luxury-items__details">
+                      <ul>
+                        <li>
+                          <div class="nav-luxury-items__main">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_luxury_items_main.jpg" alt="navigation luxury items main">
+                            </a>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="nav-luxury-items__sub-left">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_luxury_items_sub_left.jpg" alt="navigation luxury items sub left">
+                            </a>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="nav-luxury-items__sub-right">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_luxury_items_sub_right.jpg" alt="navigation luxury items sub right">
+                            </a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="nav-women-clothing">
+                    <div class="sub-menu">
+                      <ul>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>티셔츠</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>셔츠/블라우스</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>니트웨어</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>팬츠/스커트</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>원피스</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>아우터</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>여성정장</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>가죽/모피</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>언더웨어/이지웨어</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="nav-women-clothing__details">
+                      <ul>
+                        <li>
+                          <div class="nav-women-clothing__main">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_women's_clothing_main.jpg" alt="navigation women's clothing main">
+                            </a>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="nav-women-clothing__sub-left">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_women's_clothing_sub_left.jpg" alt="navigation women's clothing sub left">
+                            </a>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="nav-women-clothing__sub-right">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_women's_clothing_sub_right.jpg" alt="navigation women's clothing sub right">
+                            </a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="nav-men-clothing">
+                    <div class="sub-menu">
+                      <ul>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>티셔츠</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>셔츠/니트/가디건</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>팬츠</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>아우터</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>정장/수트</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>남성 언더웨어/이지웨어</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="nav-men-clothing__details">
+                      <ul>
+                        <li>
+                          <div class="nav-men-clothing__main">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_men's_clothing_main.jpg" alt="navigation men's clothing main">
+                            </a>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="nav-men-clothing__sub-left">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_men's_clothing_sub_left.jpg" alt="navigation men's clothing sub left">
+                            </a>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="nav-men-clothing__sub-right">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_men's_clothing_sub_right.jpg" alt="navigation men's clothing sub right">
+                            </a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="nav-sports-leisure">
+                    <div class="sub-menu">
+                      <ul>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>골프의류/용품</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>캠핑용품</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>등산/아웃도어</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>스포츠 슈즈/잡화</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="nav-sports-leisure__details">
+                      <ul>
+                        <li>
+                          <div class="nav-sports-leisure__main">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_sports_leisure_main.jpg" alt="navigation sports leisure main">
+                            </a>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="nav-sports-leisure__sub-left">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_sports_leisure_sub_left.jpg" alt="navigation sports leisure sub left">
+                            </a>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="nav-sports-leisure__sub-right">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_sports_leisure_sub_right.jpg" alt="navigation sports leisure sub right">
+                            </a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="nav-life">
+                    <div class="sub-menu">
+                      <ul>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>거실/가구</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>홈데코</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>주방/조리기구</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>바디/욕실용품</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0)">
+                            <span>커피/와인/티</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="nav-life__details">
+                      <ul>
+                        <li>
+                          <div class="nav-life__main">
+                            <a href="javascript:void(0)">
+                              <img src="./images/desktop/nav_life_main.jpg" alt="navigation life main">
+                            </a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <div class="intro-video-wrap">
+        <div class="intro-video__navigator">
+          <button class="intro-video__prev">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 6 10" style="enable-background:new 0 0 6 10;" xml:space="preserve">
+              <polygon class="st0" points="5,9.85 5.71,9.15 1.56,5 5.71,0.85 5,0.15 0.15,5 "/>
+            </svg>
+          </button>
+          <div class="nav-intro-video-count">
+            <span class="nav-intro-video-count--current">1</span>
+            <span class="nav-intro-video-count--slash">/</span>
+            <span class="nav-intro-video-count--total">4</span>
+          </div>
+          <button class="intro-video__next">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 6 10" style="enable-background:new 0 0 6 10;" xml:space="preserve">
+              <polygon class="st0" points="0.85,9.85 0.15,9.15 4.29,5 0.15,0.85 0.85,0.15 5.71,5 "/>
+            </svg>
+          </button>
+          <button class="nav-intro-video__play-pause">
+            <span class="nav-intro-video__pause active">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
+                <g>
+                  <rect x="3" y="0.5" width="1" height="9"/>
+                  <rect x="6" y="0.5" width="1" height="9"/>
+                </g>
+              </svg>
+            </span>
+            <span class="nav-intro-video__play">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 10 10" style="enable-background:new 0 0 10 10;" xml:space="preserve">
+                <path d="M2.25,9.8l0.04-9.6l5.74,4.78L2.25,9.8z M3.28,2.33L3.25,7.66l3.21-2.68L3.28,2.33z"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div class="intro-video-carousel-container">
+          <ul class="intro-video-carousel">
+            <li class="intro-video-carousel__slide intro-video-carousel--animate">
+              <a href="javascript:void(0)">
+                <div class="intro-video-carousel__title">
+                  <p class="intro-video-carousel__title-main">Happy Children's Day</p>
+                  <p class="intro-video-carousel__title-sub">아이와 함께 행복한 어린이날</p>
+                </div>
+                <div>
+                  <video muted loop preload="metadata">
+                    <source src="./videos/desktop/girl_grandmother.webm" type="video/webm">
+                    <source src="./videos/desktop/girl_grandmother.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/desktop/girl_grandmother_thumbnail.jpg" alt="girl grandmother thumbnail">
+                </div>
+              </a>
+            </li>
+            <li class="intro-video-carousel__slide intro-video-carousel--animate">
+              <a href="javascript:void(0)">
+                <div class="intro-video-carousel__title">
+                  <p class="intro-video-carousel__title-main">Luxury Gift Item</p>
+                  <p class="intro-video-carousel__title-sub">선물용 럭셔리 악세서리</p>
+                </div>
+                <div>
+                  <video muted loop preload="metadata">
+                    <source src="./videos/desktop/beauty_woman.webm" type="video/webm">
+                    <source src="./videos/desktop/beauty_woman.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/desktop/beauty_woman_thumbnail.jpg" alt="beauty woman thumbnail">
+                </div>
+              </a>
+            </li>
+            <li class="intro-video-carousel__slide intro-video-carousel--animate">
+              <a href="javascript:void(0)">
+                <div class="intro-video-carousel__title">
+                  <p class="intro-video-carousel__title-main">햇살 머금은 Beauty Gift</p>
+                  <p class="intro-video-carousel__title-sub">가격대별 베스트 뷰티선물</p>
+                </div>
+                <div>
+                  <video muted loop preload="metadata" autoplay>
+                    <source src="./videos/desktop/flowers_woman.webm" type="video/webm">
+                    <source src="./videos/desktop/flowers_woman.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/desktop/flowers_woman_thumbnail.jpg" alt="flowers woman thumbnail">
+                </div>
+              </a>
+            </li>
+            <li class="intro-video-carousel__slide intro-video-carousel--animate">
+              <a href="javascript:void(0)">
+                <div class="intro-video-carousel__title">
+                  <p class="intro-video-carousel__title-main">예술 작품 인테리어</p>
+                  <p class="intro-video-carousel__title-sub">그림 액자로 꾸미는 거실 인테리어</p>
+                </div>
+                <div>
+                  <video muted loop preload="metadata">
+                    <source src="./videos/desktop/art_woman.webm" type="video/webm">
+                    <source src="./videos/desktop/art_woman.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/desktop/art_woman_thumbnail.jpg" alt="art woman thumbnail">
+                </div>
+              </a>
+            </li>
+            <li class="intro-video-carousel__slide intro-video-carousel--animate">
+              <a href="javascript:void(0)">
+                <div class="intro-video-carousel__title">
+                  <p class="intro-video-carousel__title-main">Happy Children's Day</p>
+                  <p class="intro-video-carousel__title-sub">아이와 함께 행복한 어린이날</p>
+                </div>
+                <div>
+                  <video muted loop preload="metadata">
+                    <source src="./videos/desktop/girl_grandmother.webm" type="video/webm">
+                    <source src="./videos/desktop/girl_grandmother.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/desktop/girl_grandmother_thumbnail.jpg" alt="girl grandmother thumbnail">
+                </div>
+              </a>
+            </li>
+            <li class="intro-video-carousel__slide intro-video-carousel--animate">
+              <a href="javascript:void(0)">
+                <div class="intro-video-carousel__title">
+                  <p class="intro-video-carousel__title-main">Luxury Gift Item</p>
+                  <p class="intro-video-carousel__title-sub">선물용 럭셔리 악세서리</p>
+                </div>
+                <div>
+                  <video muted loop preload="metadata">
+                    <source src="./videos/desktop/beauty_woman.webm" type="video/webm">
+                    <source src="./videos/desktop/beauty_woman.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/desktop/beauty_woman_thumbnail.jpg" alt="beauty woman thumbnail">
+                </div>
+              </a>
+            </li>
+            <li class="intro-video-carousel__slide intro-video-carousel--animate">
+              <a href="javascript:void(0)">
+                <div class="intro-video-carousel__title">
+                  <p class="intro-video-carousel__title-main">햇살 머금은 Beauty Gift</p>
+                  <p class="intro-video-carousel__title-sub">가격대별 베스트 뷰티선물</p>
+                </div>
+                <div>
+                  <video muted loop preload="metadata">
+                    <source src="./videos/desktop/flowers_woman.webm" type="video/webm">
+                    <source src="./videos/desktop/flowers_woman.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/desktop/flowers_woman_thumbnail.jpg" alt="flowers woman thumbnail">
+                </div>
+              </a>
+            </li>
+            <li class="intro-video-carousel__slide intro-video-carousel--animate">
+              <a href="javascript:void(0)">
+                <div class="intro-video-carousel__title">
+                  <p class="intro-video-carousel__title-main">예술 작품 인테리어</p>
+                  <p class="intro-video-carousel__title-sub">그림 액자로 꾸미는 거실 인테리어</p>
+                </div>
+                <div>
+                  <video muted loop preload="metadata">
+                    <source src="./videos/desktop/art_woman.webm" type="video/webm">
+                    <source src="./videos/desktop/art_woman.mp4" type="video/mp4">
+                  </video>
+                  <img src="./videos/desktop/art_woman_thumbnail.jpg" alt="art woman thumbnail">
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-new-arrival section-desktop">
+      <h4 class="hide">New Arrival</h4>
+      <div class="new-arrival-container">
+        <div class="new-arrival__title">
+          <p>New Arrival</p>
+        </div>
+        <div class="new-arrival-main-container">
+          <div class="new-arrival__main-image">
+            <a href="javascript:void(0)">
+              <img src="./images/desktop/new_arrival_main.jpg" alt="new arrival main">
+            </a>
+          </div>
+          <div class="new-arrival-slider-wrap">
+            <div class="new-arrival-slider-container">
+              <ul class="new-arrival-slider">
+                <li class="new-arrival-slider__item">
+                  <div>
+                    <img src="./images/desktop/new_arrival_sub_01.jpg" alt="new arrival sub 01">
+                  </div>
+                  <div>
+                    <p class="new-arrival-slider__title">체인 백, 팬더 드 브랜드</p>
+                    <p class="new-arrival-slider__sub-title">브라운 송아지 가죽, 골드 피니싱</p>
+                    <p class="new-arrival-slider__price">₩4,190,000</p>
+                    <p class="new-arrival-slider__tax">부가세 포함</p>
+                  </div>
+                </li>
+                <li class="new-arrival-slider__item">
+                  <div>
+                    <img src="./images/desktop/new_arrival_sub_02.jpg" alt="new arrival sub 02">
+                  </div>
+                  <div>
+                    <p class="new-arrival-slider__title">팬더 드 브랜드 워치</p>
+                    <p class="new-arrival-slider__sub-title">mini 모델, 쿼츠 무브먼트, 옐로우 골드</p>
+                    <p class="new-arrival-slider__price">₩30,100,000</p>
+                    <p class="new-arrival-slider__tax">부가세 포함</p>
+                  </div>
+                </li>
+                <li class="new-arrival-slider__item">
+                  <div>
+                    <img src="./images/desktop/new_arrival_sub_03.jpg" alt="new arrival sub 03">
+                  </div>
+                  <div>
+                    <p class="new-arrival-slider__title">탱크 드 브랜드 벨트</p>
+                    <p class="new-arrival-slider__sub-title">블랙 소가죽, 골드 피니싱 버클</p>
+                    <p class="new-arrival-slider__price">₩665,000</p>
+                    <p class="new-arrival-slider__tax">부가세 포함</p>
+                  </div>
+                </li>
+                <li class="new-arrival-slider__item">
+                  <div>
+                    <img src="./images/desktop/new_arrival_sub_04.jpg" alt="new arrival sub 04">
+                  </div>
+                  <div>
+                    <p class="new-arrival-slider__title">레 제르 드 퍼퓸 오드 뚜왈렛, 75ml</p>
+                    <p class="new-arrival-slider__sub-title">스프레이</p>
+                    <p class="new-arrival-slider__price">₩365,000</p>
+                    <p class="new-arrival-slider__tax">부가세 포함</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="new-arrival-slider__bar">
+                <div class="new-arrival-slider__bar-total"></div>
+                <div class="new-arrival-slider__bar-current"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-exclusives section-desktop">
+      <h4 class="hide">Exclusives</h4>
+      <div class="exclusives-container">
+        <div class="exclusives__title">
+          <p>Exclusives</p>
+        </div>
+        <div class="exclusives-main-container">
+          <div>
+            <div class="exclusives-carousel-container">
+              <ul class="exclusives-carousel is-set">
+                <li class="exclusives-carousel__seat">
+                  <div>
+                    <a href="javascript:void(0)">
+                      <img src="./images/desktop/exclusives_01.jpg" alt="exclusives image 01">
+                    </a>
+                  </div>
+                </li>
+                <li class="exclusives-carousel__seat">
+                  <div>
+                    <a href="javascript:void(0)">
+                      <img src="./images/desktop/exclusives_02.jpg" alt="exclusives L image 02">
+                    </a>
+                  </div>
+                </li>
+                <li class="exclusives-carousel__seat">
+                  <div>
+                    <a href="javascript:void(0)">
+                      <img src="./images/desktop/exclusives_03.jpg" alt="exclusives image 03">
+                    </a>
+                  </div>
+                </li>
+                <li class="exclusives-carousel__seat">
+                  <div>
+                    <a href="javascript:void(0)">
+                      <img src="./images/desktop/exclusives_04.jpg" alt="exclusives image 04">
+                    </a>
+                  </div>
+                </li>
+                <li class="exclusives-carousel__seat">
+                  <div>
+                    <a href="javascript:void(0)">
+                      <img src="./images/desktop/exclusives_05.jpg" alt="exclusievs image 05">
+                    </a>
+                  </div>
+                </li>
+                <li class="exclusives-carousel__seat">
+                  <div>
+                    <a href="javascript:void(0)">
+                      <img src="./images/desktop/exclusives_06.jpg" alt="exclusievs image 06">
+                    </a>
+                  </div>
+                </li>
+                <li class="exclusives-carousel__seat exclusives-is-ref">
+                  <div>
+                    <a href="javascript:void(0)">
+                      <img src="./images/desktop/exclusives_07.jpg" alt="exclusievs image 07">
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="exclusives__nav-buttons">
+              <button class="exclusives__prev toggle" data-toggle="prev">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 37 67" style="enable-background:new 0 0 37 67;" xml:space="preserve">
+                  <g transform="translate(-188.379 -543.379)">
+                    <rect x="184.62" y="560.33" transform="matrix(0.7072 -0.707 0.707 0.7072 -336.5134 311.1216)" class="st0" width="45.48" height="3"/>
+                    <rect x="205.86" y="569.13" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -357.7823 319.9855)" class="st0" width="3" height="45.48"/>
+                  </g>
+                </svg>
+              </button>
+              <button class="exclusives__next toggle" data-toggle="next">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 37 67" style="enable-background:new 0 0 37 67;" xml:space="preserve">
+                  <g transform="translate(-188.379 -543.379)">
+                    <rect x="204.86" y="539.1" transform="matrix(0.707 -0.7072 0.7072 0.707 -336.864 310.5396)" class="st0" width="3" height="45.48"/>
+                    <rect x="183.62" y="590.37" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -358.071 319.2698)" class="st0" width="45.48" height="3"/>
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-accessories section-desktop">
+      <h4 class="hide">Accessories</h4>
+      <div class="accessories-container">
+        <div class="accessories__title">
+          <p>Accessories</p>
+        </div>
+        <div class="accessories-main-container">
+          <div class="accessories-main-video">
+            <a href="javascript:void(0)">
+              <video muted loop>
+                <source src="./videos/desktop/accessories_woman.webm" type="video/webm">
+                <source src="./videos/desktop/accessories_woman.mp4" type="video/mp4">
+              </video>
+              <img src="./videos/desktop/accessories_woman_thumbnail.jpg" alt="accessories woman thumbnail">
+            </a>
+          </div>
+          <div class="accessories-sub-images">
+            <div class="accessories-sub-images__top">
+              <a href="javascript:void(0)">
+                <img src="./images/desktop/accessories_sub_01.jpg" alt="accessories sub 01">
+                <span>브랜드 프레임 라지 반지</span>
+              </a>
+            </div>
+            <div class="accessories-sub-images__bottom">
+              <a href="javascript:void(0)">
+                <img src="./images/desktop/accessories_sub_02.jpg" alt="accessories sub 02">
+                <span>발롱 블루 드 브랜드 워치</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-life-culture section-desktop">
+      <h4 class="hide">Life&Culture</h4>
+      <div class="life-container">
+        <div class="life__title">
+          <p>Life&Culture</p>
+        </div>
+        <div class="life-main-wrap">
+          <div class="life-main-container">
+            <div class="life-main-text">
+              <div class="life-main-text__title">
+                <p>라이프 스타일 브랜드</p>
+              </div>
+              <div class="life-main-text__sub-title">
+                <p>현대를 살아가는 한국인의</p>
+                <p>라이프스타일에 필요한 제품</p>
+              </div>
+              <div class="life-main-text__tag">
+                <a href="javascript:void(0)">
+                  <span>#테디베어</span>
+                </a>
+                <a href="javascript:void(0)">
+                  <span>#홈카페</span>
+                </a>
+              </div>
+            </div>
+            <div class="life-main-image">
+              <div>
+                <a href="javascript:void(0)">
+                  <img src="./images/desktop/life&culture_main.jpg" alt="life&culture main">
+                </a>
+              </div>
+            </div>
+            <div class="life-sub-image">
+              <div class="life-sub-image__top">
+                <div>
+                  <a href="javascript:void(0)">
+                    <img src="./images/desktop/life&culture_sub_01.jpg" alt="life&culture sub 01">
+                  </a>
+                </div>
+              </div>
+              <div class="life-sub-image__bottom">
+                <div>
+                  <a href="javascript:void(0)">
+                    <img src="./images/desktop/life&culture_sub_02.jpg" alt="life&culture sub 02">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-desktop">
+        <div class="footer-top">
+          <ul>
+            <li>
+              <a href="javascript:void(0)">
+                <span>공지사항</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <span>윤리경영</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <span>사회공헌</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <span>이용약관</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <span>개인정보 처리방침</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-bottom-wrap">
+          <div class="footer-bottom">
+            <div class="footer-logo">
+              <a href="javascript:void(0)">
+                <img src="./images/desktop/logo.png" alt="footer logo">
+              </a>
+            </div>
+            <div class="footer-details">
+              <ul>
+                <li>
+                  <p>주식회사 브랜드 대표이사 : 홍길동 서울시 강남구 OOO로00길 00</p>
+                </li>
+                <li>
+                  <p>사업자등록번호 : 000-000-000 [사업자정보 확인] 통신판매업신고 : 2010-서울강남-00000</p>
+                </li>
+                <li>
+                  <p>홈페이지/앱 문의 : service@OOO.OOO 고객센터 : 0000-0000</p>
+                </li>
+                <li>
+                  <p>호스팅서비스 : 브랜드</p>
+                </li>
+                <li>
+                  <p>CopyrightⓒBrand All rights reserved.</p>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-social">
+              <ul>
+                <li>
+                  <a href="javascript:void(0)">
+                    <img src="./images/icon/facebook_free_icon.png" alt="facebook icon">
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">
+                    <img src="./images/icon/twitter_free_icon.png" alt="twitter icon">
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">
+                    <img src="./images/icon/instagram_free_icon.png" alt="instagram icon">
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">
+                    <img src="./images/icon/youtube_free_icon.png" alt="youtube icon">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-real-copyright">
+              <ul>
+                <li>
+                  <p>퍼블리셔 신상호의 쇼핑몰 포트폴리오입니다.</p>
+                </li>
+                <li>
+                  <p>더현대닷컴과 에스아이빌리지 사이트를 참고하여 리디자인했음을 말씀드립니다.</p>
+                </li>
+                <li>
+                  <p>사용된 이미지와 동영상은 별도의 출처가 있음을 말씀드립니다.</p>
+                </li>
+                <li>
+                  <p>CopyrightⓒShin Sang-Ho, All rights reserved.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
