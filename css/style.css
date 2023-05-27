@@ -44,7 +44,7 @@
   }
 }
 
-body {
+html, body {
   width: 100%;
   height: 100%;
   background-color: #fff;
@@ -58,13 +58,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 @media (max-width: 767px) {
   body {
     width: 360px;
     width: 36rem;
-    overflow-x: hidden;
   }
 }
 
@@ -72,7 +72,6 @@ body {
   body {
     max-width: 1920px;
     max-width: 192rem;
-    overflow-x: hidden;
   }
 }
 
@@ -115,15 +114,8 @@ input, button {
   }
 }
 
-@media (min-width: 1320px) and (max-width: 1919px) {
+@media (min-width: 1320px) {
   #wrap {
-    max-width: 1280px;
-    max-width: 128rem;
-  }
-}
-
-@media (min-width: 1920px) {
-  body {
     max-width: 1280px;
     max-width: 128rem;
   }
@@ -1209,12 +1201,14 @@ header {
   z-index: 4;
 }
 
-.m-intro-video__video-container img {
+/* .m-intro-video__video-container img {
   width: 100%;
   height: 100%;
   position: absolute;
+  top: 0;
   left: 0;
-}
+  z-index: -1;
+} */
 
 .m-intro-video__swiper-pagination {
   width: 65px;

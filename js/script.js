@@ -1,5 +1,5 @@
 // mobile search screen & menu screen
-const $wrap = document.querySelector(`#wrap`);
+const $scrollWrapper = document.querySelector(`#scroll-wrapper`);
 const $mTopWrap = document.querySelector(`.m-top-wrap`);
 const $mSearchWrap = document.querySelector(`.m-search-wrap`);
 const $mMenuWrap = document.querySelector(`.m-menu-wrap`);
@@ -9,11 +9,16 @@ const $mLeftArrow = document.querySelector(`.m-left-arrow`);
 const $mSearchInputbox = document.querySelector(`.m-search-input__inputbox`);
 
 let mTopWrapClickedBefore = true;
-let mSearchScreenMenuIsOpen = false;
 
-function mSearchScreenActive(e) {
-  mSearchScreenMenuIsOpen = true;
-  
+function disableScrollToggle() {
+  if (($mSearchWrap.classList.contains(`active`) || $mMenuWrap.classList.contains(`active`)) && window.matchMedia(`(max-width: 767px)`).matches) {
+    $scrollWrapper.classList.add(`disable-scroll`);
+  } else {
+    $scrollWrapper.classList.remove(`disable-scroll`);
+  }
+}
+
+function mSearchScreenActive(e) {  
   $mSearchWrap.classList.add(`active`);
 
   if (e.target.parentNode.classList.contains(`is-top`)) {
@@ -24,40 +29,35 @@ function mSearchScreenActive(e) {
     $mMenuWrap.classList.remove(`active`);
   }
 
-  $wrap.classList.add(`disable-scroll`);
+  disableScrollToggle();
 }
 
 function mTopWrapActive() {
-  mSearchScreenMenuIsOpen = false;
-
   $mTopWrap.classList.add(`active`);
   $mSearchWrap.classList.remove(`active`);
 
-  $wrap.classList.remove(`disable-scroll`);
+  disableScrollToggle();
 }
 
 function mMenuContainerActive() {
-  mSearchScreenMenuIsOpen = true;
-
   $mMenuWrap.classList.add(`active`);
   $mSearchWrap.classList.remove(`active`);
-  $wrap.classList.add(`disable-scroll`);
+
+  disableScrollToggle();
 }
 
 function mMenuScreenToggle(e) {
   if (e.target.parentNode.classList.contains(`is-top`)) {
-    mSearchScreenMenuIsOpen = true;
-
     $mMenuWrap.classList.add(`active`);
     $mTopWrap.classList.remove(`active`);
-    $wrap.classList.add(`disable-scroll`);
   } else {
     mSearchScreenMenuIsOpen = false;
 
     $mTopWrap.classList.add(`active`);
     $mMenuWrap.classList.remove(`active`);
-    $wrap.classList.remove(`disable-scroll`);
   }
+  
+  disableScrollToggle();
 }
 
 function inputboxPlaceholderFocus() {
@@ -87,14 +87,8 @@ $mHamburgerIcon.forEach(element => {
 $mSearchInputbox.addEventListener(`focus`, inputboxPlaceholderFocus);
 $mSearchInputbox.addEventListener(`blur`, inputboxPlaceholderBlur);
 
-window.addEventListener(`resize`, function(e) {
-  if (this.window.matchMedia(`(min-width: 768px)`).matches && $wrap.classList.contains(`disable-scroll`)) {
-    $wrap.classList.remove(`disable-scroll`);
-  } else if (this.window.matchMedia(`(max-width: 767px)`).matches && mSearchScreenMenuIsOpen === true) {
-    $wrap.classList.add(`disable-scroll`);
-  } else {
-    // Notning.
-  }
+window.addEventListener(`resize`, function() {
+  disableScrollToggle();
 })
 
 //mobile top wrap bottom header
@@ -205,6 +199,16 @@ const mIntroVideoSwiper = new Swiper(`.m-intro-video__swiper`, {
     type: `fraction`,
   },
 });
+
+// mobile intro video Fix screen flickering
+const $mIntroVideoContainerVideos = document.querySelectorAll(`.m-intro-video__video-container video`);
+const $mIntroVideoContainerImages = document.querySelectorAll(`.m-intro-video__video-container img`);
+
+$mIntroVideoContainerVideos.forEach((element, index) => {
+  element.addEventListener(`DOMContentLoaded`, function() {
+    $mIntroVideoContainerImages[index].style.display = `none`;
+  })
+})
 
 // mobile new arrival swiper
 const mNewArrivalSwiper = new Swiper(`.m-new-arrival__swiper`, {
@@ -321,13 +325,10 @@ $bottomLeftNavArea.forEach((element) => {
 })
 
 $topNavAreaMouseEnter.addEventListener(`mouseenter`, bottomNavAreaRemoveClass);
-
 $topNavAreaMouseEvent.addEventListener(`mouseenter`, bottomNavAreaAddClass);
-
 $topNavAreaMouseEvent.addEventListener(`mouseleave`, bottomNavAreaRemoveClass);
 
 $bottomNavArea.addEventListener(`mouseenter`, bottomNavAreaAddClass);
-
 $bottomNavArea.addEventListener(`mouseleave`, bottomNavAreaRemoveClass);
 
 // Intro Video Carousel
@@ -345,9 +346,7 @@ const $introVideoPlay = document.querySelector(`.nav-intro-video__play`);
 const $introVideoPause = document.querySelector(`.nav-intro-video__pause`);
 
 const introVideoCurrTransl = [];
-
 const INTRO_VIDEO_SET_TIMEOUT_DELAY = 7100;
-
 const INTRO_VIDEO_SLIDE_WIDTH_PERCENT = 100;
 
 // Exclusives Carousel start
@@ -538,7 +537,6 @@ $introVideoPlayPause.addEventListener('click', introVideoPlayPauseToggle);
 
 // Fixed MenuBar
 const $headerDesktop = document.querySelector(`.header-desktop`);
-
 const HEADER_ADD_CLASS_FIXED_DELAY = 100;
 
 let headerAddClassFixedSetTimeOut;
@@ -706,7 +704,6 @@ function exclusivesSwipeNext() {
 }
 
 $exclusivesPrev.addEventListener(`click`, exclusivesDelegate(exclusivesToggleFilter, exclusivesToggleHandler));
-
 $exclusivesNext.addEventListener(`click`, exclusivesDelegate(exclusivesToggleFilter, exclusivesToggleHandler));
 
 window.addEventListener(`resize`, function(e) {
@@ -718,17 +715,15 @@ window.addEventListener(`resize`, function(e) {
 
 // Accessories
 const $accessoriesMainVideo = document.querySelector(`.accessories-main-video video`);
-
 const ACCESSORIES_ADD_CLASS_FIXED_DELAY = 100;
 
 let accessoriesAddClassFixedSetTimeOut;
 
 function accessoriesAddClassFixed() {
   accessoriesAddClassFixedSetTimeOut = null;
-
   const scrollTop = document.scrollingElement.scrollTop;
 
-  if (scrollTop > (($sectionDesktop[0].offsetHeight * 3) - 650) && scrollTop < (($sectionDesktop[0].offsetHeight * 4))) {
+  if ((scrollTop > ($sectionDesktop[0].offsetHeight * 2.25)) && (scrollTop < ($sectionDesktop[0].offsetHeight * 4))) {
     $accessoriesMainVideo.play();
   } else {
     $accessoriesMainVideo.pause();
