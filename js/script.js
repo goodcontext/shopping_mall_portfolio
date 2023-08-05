@@ -1,78 +1,78 @@
 // mobile search screen & menu screen
-const $scrollWrapper = document.querySelector(`#scroll-wrapper`);
-const $mTopWrap = document.querySelector(`.m-top-wrap`);
-const $mSearchWrap = document.querySelector(`.m-search-wrap`);
-const $mMenuWrap = document.querySelector(`.m-menu-wrap`);
-const $mSearchIcon = document.querySelectorAll(`.m-search-icon`);
-const $mHamburgerIcon = document.querySelectorAll(`.m-hamburger-icon`);
-const $mLeftArrow = document.querySelector(`.m-left-arrow`);
-const $mSearchInputbox = document.querySelector(`.m-search-input__inputbox`);
+const $scrollWrapper = document.querySelector("#scroll-wrapper");
+const $mTopWrap = document.querySelector(".m-top-wrap");
+const $mSearchWrap = document.querySelector(".m-search-wrap");
+const $mMenuWrap = document.querySelector(".m-menu-wrap");
+const $mSearchIcon = document.querySelectorAll(".m-search-icon");
+const $mHamburgerIcon = document.querySelectorAll(".m-hamburger-icon");
+const $mLeftArrow = document.querySelector(".m-left-arrow");
+const $mSearchInputbox = document.querySelector(".m-search-input__inputbox");
 
 let mTopWrapClickedBefore = true;
 
 function disableScrollToggle() {
-  if (($mSearchWrap.classList.contains(`active`) || $mMenuWrap.classList.contains(`active`)) && window.matchMedia(`(max-width: 767px)`).matches) {
-    $scrollWrapper.classList.add(`disable-scroll`);
+  if (($mSearchWrap.classList.contains("active") || $mMenuWrap.classList.contains("active")) && window.matchMedia("(max-width: 767px)").matches) {
+    $scrollWrapper.classList.add("disable-scroll");
   } else {
-    $scrollWrapper.classList.remove(`disable-scroll`);
+    $scrollWrapper.classList.remove("disable-scroll");
   }
 }
 
 function mSearchScreenActive(e) {  
-  $mSearchWrap.classList.add(`active`);
+  $mSearchWrap.classList.add("active");
 
-  if (e.target.parentNode.classList.contains(`is-top`)) {
+  if (e.target.parentNode.classList.contains("is-top")) {
     mTopWrapClickedBefore = true;
-    $mTopWrap.classList.remove(`active`);
+    $mTopWrap.classList.remove("active");
   } else {
     mTopWrapClickedBefore = false;
-    $mMenuWrap.classList.remove(`active`);
+    $mMenuWrap.classList.remove("active");
   }
 
   disableScrollToggle();
 }
 
 function mTopWrapActive() {
-  $mTopWrap.classList.add(`active`);
-  $mSearchWrap.classList.remove(`active`);
+  $mTopWrap.classList.add("active");
+  $mSearchWrap.classList.remove("active");
 
   disableScrollToggle();
 }
 
 function mMenuContainerActive() {
-  $mMenuWrap.classList.add(`active`);
-  $mSearchWrap.classList.remove(`active`);
+  $mMenuWrap.classList.add("active");
+  $mSearchWrap.classList.remove("active");
 
   disableScrollToggle();
 }
 
 function mMenuScreenToggle(e) {
-  if (e.target.parentNode.classList.contains(`is-top`)) {
-    $mMenuWrap.classList.add(`active`);
-    $mTopWrap.classList.remove(`active`);
+  if (e.target.parentNode.classList.contains("is-top")) {
+    $mMenuWrap.classList.add("active");
+    $mTopWrap.classList.remove("active");
   } else {
     mSearchScreenMenuIsOpen = false;
 
-    $mTopWrap.classList.add(`active`);
-    $mMenuWrap.classList.remove(`active`);
+    $mTopWrap.classList.add("active");
+    $mMenuWrap.classList.remove("active");
   }
   
   disableScrollToggle();
 }
 
 function inputboxPlaceholderFocus() {
-  $mSearchInputbox.placeholder = `검색어를 입력하세요.`;
+  $mSearchInputbox.placeholder = "검색어를 입력하세요.";
 }
 
 function inputboxPlaceholderBlur() {
-  $mSearchInputbox.placeholder = `최대 18% 멤버십 페이백`;
+  $mSearchInputbox.placeholder = "최대 18% 멤버십 페이백";
 }
 
 $mSearchIcon.forEach(element => {
-  element.addEventListener(`click`, mSearchScreenActive);
+  element.addEventListener("click", mSearchScreenActive);
 });
 
-$mLeftArrow.addEventListener(`click`, function() {
+$mLeftArrow.addEventListener("click", function() {
   if (mTopWrapClickedBefore) {
     mTopWrapActive();
   } else {
@@ -81,19 +81,19 @@ $mLeftArrow.addEventListener(`click`, function() {
 });
 
 $mHamburgerIcon.forEach(element => {
-  element.addEventListener(`click`, mMenuScreenToggle);
+  element.addEventListener("click", mMenuScreenToggle);
 });
 
-$mSearchInputbox.addEventListener(`focus`, inputboxPlaceholderFocus);
-$mSearchInputbox.addEventListener(`blur`, inputboxPlaceholderBlur);
+$mSearchInputbox.addEventListener("focus", inputboxPlaceholderFocus);
+$mSearchInputbox.addEventListener("blur", inputboxPlaceholderBlur);
 
-window.addEventListener(`resize`, function() {
+window.addEventListener("resize", function() {
   disableScrollToggle();
 })
 
 //mobile top wrap bottom header
-const $mBottomHeaderMenuItem = document.querySelectorAll(`.m-bottom-header__menu-item`);
-const $toastMessages = document.querySelector(`.toast-messages`);
+const $mBottomHeaderMenuItem = document.querySelectorAll(".m-bottom-header__menu-item");
+const $toastMessages = document.querySelector(".toast-messages");
 
 let mBottomHeaderPreIndex = 0;
 let toastMessagesIsShowing = false;
@@ -102,68 +102,68 @@ function mBottomHeaderMenuItemActivate(e) {
   const nodes = [...$mBottomHeaderMenuItem];
   const index = nodes.indexOf(e.currentTarget);
 
-  e.currentTarget?.classList.add(`active`);
+  e.currentTarget?.classList.add("active");
 
   if (index !== mBottomHeaderPreIndex) {
-    $mBottomHeaderMenuItem[mBottomHeaderPreIndex]?.classList.remove(`active`);
+    $mBottomHeaderMenuItem[mBottomHeaderPreIndex]?.classList.remove("active");
   }
   
   mBottomHeaderPreIndex = index;
 
   if (!toastMessagesIsShowing) {
     toastMessagesIsShowing = true;
-    $toastMessages.classList.add(`active`);
+    $toastMessages.classList.add("active");
 
     setTimeout(function() {
-      $toastMessages.classList.remove(`active`);
+      $toastMessages.classList.remove("active");
       toastMessagesIsShowing = false;
     }, 5100);
   }
 }
 
 $mBottomHeaderMenuItem.forEach(element => {
-  element.addEventListener(`click`, mBottomHeaderMenuItemActivate);
+  element.addEventListener("click", mBottomHeaderMenuItemActivate);
 });
 
 // mobile recent search word context menu
-const $mRecentSearchEllipsis = document.querySelector(`.m-recent-search__ellipsis`);
-const $mRecentSearchContextMenu = document.querySelector(`.m-recent-search__context-menu`);
+const $mRecentSearchEllipsis = document.querySelector(".m-recent-search__ellipsis");
+const $mRecentSearchContextMenu = document.querySelector(".m-recent-search__context-menu");
 
 function mRecentSearchEllipsisContextMenuToggle() {
-  $mRecentSearchContextMenu.classList.toggle(`active`)
+  $mRecentSearchContextMenu.classList.toggle("active")
 }
 
-$mRecentSearchEllipsis.addEventListener(`click`, mRecentSearchEllipsisContextMenuToggle);
+$mRecentSearchEllipsis.addEventListener("click", mRecentSearchEllipsisContextMenuToggle);
 
 // mobile top searched word swiper
-const mTopSearchedWordSwiper = new Swiper(`.m-top-searched-word__swiper`, {
+const mTopSearchedWordSwiper = new Swiper(".m-top-searched-word__swiper", {
   loop: true,
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
   },
   pagination: {
-    el: `.m-top-searched-word__swiper-pagination`,
+    el: ".m-top-searched-word__swiper-pagination",
     clickable: true,
   },
 });
 
 // mobile banner swiper
-const mBannerSwiper = new Swiper(`.m-banner__swiper`, {
+const mBannerSwiper = new Swiper(".m-banner__swiper", {
   loop: true,
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
   },
   pagination: {
-    el: `.m-banner__swiper-pagination`,
+    el: ".m-banner__swiper-pagination",
     clickable: true,
   },
 });
 
 // mobile menu submenu
-const $mMenuLeftItem = document.querySelectorAll(`.m-menu-left-item`);
-const $mMenuRightSubmenuItems = document.querySelectorAll(`.m-menu-right-submenu__items`);
+const $mMenuLeftItem = document.querySelectorAll(".m-menu-left-item");
+const $mMenuRightSubmenuItems = document.querySelectorAll(".m-menu-right-submenu__items");
 
 let mMenuPreIndex = 0;
 
@@ -171,79 +171,79 @@ function mMenuRightSubmenuItemsAddClass(e) {
   const nodes = [...$mMenuLeftItem];
   const index = nodes.indexOf(e.currentTarget);
 
-  e.currentTarget?.classList.add(`active`);
-  $mMenuRightSubmenuItems[index]?.classList.add(`active`);
+  e.currentTarget?.classList.add("active");
+  $mMenuRightSubmenuItems[index]?.classList.add("active");
 
   if (index !== mMenuPreIndex) {
-    $mMenuRightSubmenuItems[mMenuPreIndex]?.classList.remove(`active`);
-    $mMenuLeftItem[mMenuPreIndex]?.classList.remove(`active`);
+    $mMenuRightSubmenuItems[mMenuPreIndex]?.classList.remove("active");
+    $mMenuLeftItem[mMenuPreIndex]?.classList.remove("active");
   }
   
   mMenuPreIndex = index;
 }
 
 $mMenuLeftItem.forEach(element => {
-  element.addEventListener(`click`, mMenuRightSubmenuItemsAddClass);
+  element.addEventListener("click", mMenuRightSubmenuItemsAddClass);
 });
 
 // mobile intro video swiper
-const mIntroVideoSwiper = new Swiper(`.m-intro-video__swiper`, {
+const mIntroVideoSwiper = new Swiper(".m-intro-video__swiper", {
   loop: true,
   autoplay: {
     delay: 5100,
     disableOnInteraction: false,
   },
   pagination: {
-    el: `.m-intro-video__swiper-pagination`,
+    el: ".m-intro-video__swiper-pagination",
     clickable: true,
-    type: `fraction`,
+    type: "fraction",
   },
 });
 
 // mobile intro video Fix screen flickering
-const $mIntroVideoContainerVideos = document.querySelectorAll(`.m-intro-video__video-container video`);
-const $mIntroVideoContainerImages = document.querySelectorAll(`.m-intro-video__video-container img`);
+const $mIntroVideoContainerVideos = document.querySelectorAll(".m-intro-video__video-container video");
+const $mIntroVideoContainerImages = document.querySelectorAll(".m-intro-video__video-container img");
 
 $mIntroVideoContainerVideos.forEach((element, index) => {
-  element.addEventListener(`DOMContentLoaded`, function() {
-    $mIntroVideoContainerImages[index].style.display = `none`;
+  element.addEventListener("DOMContentLoaded", function() {
+    $mIntroVideoContainerImages[index].style.display = "none";
   })
 })
 
 // mobile new arrival swiper
-const mNewArrivalSwiper = new Swiper(`.m-new-arrival__swiper`, {
+const mNewArrivalSwiper = new Swiper(".m-new-arrival__swiper", {
   loop: true,
   autoplay: {
     delay: 5100,
     disableOnInteraction: false,
   },
   pagination: {
-    el: `.m-new-arrival__swiper-pagination-progressbar`,
+    el: ".m-new-arrival__swiper-pagination-progressbar",
     clickable: true,
-    type: `progressbar`,
+    type: "progressbar",
   },
 });
 
 // mobile exclusives swiper
-const mExclusivesSwiper = new Swiper(`.m-exclusives__swiper`, {
+const mExclusivesSwiper = new Swiper(".m-exclusives__swiper", {
   loop: true,
   autoplay: {
     delay: 5100,
     disableOnInteraction: false,
   },
   pagination: {
-    el: `.m-exclusives__swiper-pagination-progressbar`,
+    el: ".m-exclusives__swiper-pagination-progressbar",
     clickable: true,
-    type: `progressbar`,
+    type: "progressbar",
   },  
   navigation: {
-    nextEl: `.m-exclusives__swiper-button-next`,
-    prevEl: `.m-exclusives__swiper-button-prev`,
+    nextEl: ".m-exclusives__swiper-button-next",
+    prevEl: ".m-exclusives__swiper-button-prev",
   },
 });
 
 // mobile intro video autoplay
-const $mAccessoriesVideoContainer = document.querySelector(`.m-accessories__video-container video`);
+const $mAccessoriesVideoContainer = document.querySelector(".m-accessories__video-container video");
 
 const mAccessoriesVideoObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -258,25 +258,25 @@ const mAccessoriesVideoObserver = new IntersectionObserver((entries) => {
 mAccessoriesVideoObserver.observe($mAccessoriesVideoContainer);
 
 // mobile life&culture swiper
-const mLifeSwiper = new Swiper(`.m-life__swiper`, {
+const mLifeSwiper = new Swiper(".m-life__swiper", {
   loop: true,
   autoplay: {
     delay: 5100,
     disableOnInteraction: false,
   },
   pagination: {
-    el: `.m-life__swiper-pagination`,
+    el: ".m-life__swiper-pagination",
     clickable: true,
   },
 });
 
 // GNB
-const $topNavArea = document.querySelectorAll(`.top-nav-area>ul>li>a`);
-const $bottomLeftNavArea = document.querySelectorAll(`.bottom-left-nav-area>ul>li>a`);
-const $bottomRightNavArea = document.querySelectorAll(`.bottom-right-nav-area>ul>li`);
-const $bottomNavArea = document.querySelector(`.bottom-nav-area`);
-const $topNavAreaMouseEnter = document.querySelector(`.top-nav-area--mouse-enter`);
-const $topNavAreaMouseEvent = document.querySelector(`.top-nav-area--mouse-event`);
+const $topNavArea = document.querySelectorAll(".top-nav-area>ul>li>a");
+const $bottomLeftNavArea = document.querySelectorAll(".bottom-left-nav-area>ul>li>a");
+const $bottomRightNavArea = document.querySelectorAll(".bottom-right-nav-area>ul>li");
+const $bottomNavArea = document.querySelector(".bottom-nav-area");
+const $topNavAreaMouseEnter = document.querySelector(".top-nav-area--mouse-enter");
+const $topNavAreaMouseEvent = document.querySelector(".top-nav-area--mouse-event");
 
 let gnbPreIndex = 0;
 
@@ -285,10 +285,10 @@ function topNavAreaAddClass(e) {
   const index = nodes.indexOf(e.target) - 1 < 0 ? 0 : nodes.indexOf(e.target) - 1;
 
   bottomNavAreaAddClass();
-  $bottomRightNavArea[index].classList.add(`active`);
+  $bottomRightNavArea[index].classList.add("active");
 
   if (index !== gnbPreIndex) {
-    $bottomRightNavArea[gnbPreIndex]?.classList.remove(`active`);
+    $bottomRightNavArea[gnbPreIndex]?.classList.remove("active");
   }
 
   gnbPreIndex = index;
@@ -299,51 +299,51 @@ function bottomLeftNavAreaAddClass(e) {
   const index = nodes.indexOf(e.target);
 
   bottomNavAreaAddClass();
-  $bottomRightNavArea[index].classList.add(`active`);
+  $bottomRightNavArea[index].classList.add("active");
 
   if (index !== gnbPreIndex) {
-    $bottomRightNavArea[gnbPreIndex]?.classList.remove(`active`);
+    $bottomRightNavArea[gnbPreIndex]?.classList.remove("active");
   }
 
   gnbPreIndex = index;
 }
 
 function bottomNavAreaAddClass() {
-  $bottomNavArea.classList.add(`active`);
+  $bottomNavArea.classList.add("active");
 }
 
 function bottomNavAreaRemoveClass() {
-  $bottomNavArea.classList.remove(`active`);
+  $bottomNavArea.classList.remove("active");
 }
 
 $topNavArea.forEach((element) => {
-  element.addEventListener(`mouseenter`, topNavAreaAddClass);
+  element.addEventListener("mouseenter", topNavAreaAddClass);
 })
 
 $bottomLeftNavArea.forEach((element) => {
-  element.addEventListener(`mouseenter`, bottomLeftNavAreaAddClass);
+  element.addEventListener("mouseenter", bottomLeftNavAreaAddClass);
 })
 
-$topNavAreaMouseEnter.addEventListener(`mouseenter`, bottomNavAreaRemoveClass);
-$topNavAreaMouseEvent.addEventListener(`mouseenter`, bottomNavAreaAddClass);
-$topNavAreaMouseEvent.addEventListener(`mouseleave`, bottomNavAreaRemoveClass);
+$topNavAreaMouseEnter.addEventListener("mouseenter", bottomNavAreaRemoveClass);
+$topNavAreaMouseEvent.addEventListener("mouseenter", bottomNavAreaAddClass);
+$topNavAreaMouseEvent.addEventListener("mouseleave", bottomNavAreaRemoveClass);
 
-$bottomNavArea.addEventListener(`mouseenter`, bottomNavAreaAddClass);
-$bottomNavArea.addEventListener(`mouseleave`, bottomNavAreaRemoveClass);
+$bottomNavArea.addEventListener("mouseenter", bottomNavAreaAddClass);
+$bottomNavArea.addEventListener("mouseleave", bottomNavAreaRemoveClass);
 
 // Intro Video Carousel
-const $sectionDesktop = document.querySelectorAll(`.section-desktop`);
-const $introVideoCarousel = document.querySelector(`.intro-video-carousel`);
-const $introVideoCarouselSlide = document.querySelectorAll(`.intro-video-carousel__slide`);
-const $introVideoCarouselSlideVideos = document.querySelectorAll(`.intro-video-carousel__slide > a > div > video`);
-const $introVideoCarouselTitle = document.querySelectorAll(`.intro-video-carousel__title`);5
-const $introVideoPrev = document.querySelector(`.intro-video__prev`);
-const $introVideoNext = document.querySelector(`.intro-video__next`);
-const $introVideoCountCurrent = document.querySelector(`.nav-intro-video-count--current`);
-const $introVideoCountTotal = document.querySelector(`.nav-intro-video-count--total`);
-const $introVideoPlayPause = document.querySelector(`.nav-intro-video__play-pause`);
-const $introVideoPlay = document.querySelector(`.nav-intro-video__play`);
-const $introVideoPause = document.querySelector(`.nav-intro-video__pause`);
+const $sectionDesktop = document.querySelectorAll(".section-desktop");
+const $introVideoCarousel = document.querySelector(".intro-video-carousel");
+const $introVideoCarouselSlide = document.querySelectorAll(".intro-video-carousel__slide");
+const $introVideoCarouselSlideVideos = document.querySelectorAll(".intro-video-carousel__slide > a > div > video");
+const $introVideoCarouselTitle = document.querySelectorAll(".intro-video-carousel__title");5
+const $introVideoPrev = document.querySelector(".intro-video__prev");
+const $introVideoNext = document.querySelector(".intro-video__next");
+const $introVideoCountCurrent = document.querySelector(".nav-intro-video-count--current");
+const $introVideoCountTotal = document.querySelector(".nav-intro-video-count--total");
+const $introVideoPlayPause = document.querySelector(".nav-intro-video__play-pause");
+const $introVideoPlay = document.querySelector(".nav-intro-video__play");
+const $introVideoPause = document.querySelector(".nav-intro-video__pause");
 
 const introVideoCurrTransl = [];
 const INTRO_VIDEO_SET_TIMEOUT_DELAY = 7100;
@@ -372,12 +372,12 @@ function introVideoTransitionCompleted() {
 function introVideoMeasureWidth() {
   introVideoAmount = $introVideoCarouselSlide.length;
   introVideoMoveOffset = INTRO_VIDEO_SLIDE_WIDTH_PERCENT;
-  $introVideoCarousel.style.width = (introVideoAmount * introVideoMoveOffset) + `%`;
+  $introVideoCarousel.style.width = (introVideoAmount * introVideoMoveOffset) + "%";
 
   setTimeoutScreenChange(INTRO_VIDEO_SET_TIMEOUT_DELAY);
 }
 
-document.addEventListener(`DOMContentLoaded`, function() {
+document.addEventListener("DOMContentLoaded", function() {
   introVideoMeasureWidth();
   
   introVideoActiveScreen(introVideoIndex, introVideoAmount, introVideoDirection);
@@ -385,17 +385,17 @@ document.addEventListener(`DOMContentLoaded`, function() {
 
   for(let i = 0; i < introVideoAmount; i++) {
     introVideoCurrTransl[i] = -introVideoMoveOffset;
-    $introVideoCarouselSlide[i].addEventListener(`transitionend`, introVideoTransitionCompleted, true);
-    $introVideoCarouselSlide[i].addEventListener(`webkitTransitionEnd`, introVideoTransitionCompleted, true);
-    $introVideoCarouselSlide[i].addEventListener(`oTransitionEnd`, introVideoTransitionCompleted, true);
-    $introVideoCarouselSlide[i].addEventListener(`MSTransitionEnd`, introVideoTransitionCompleted, true);
+    $introVideoCarouselSlide[i].addEventListener("transitionend", introVideoTransitionCompleted, true);
+    $introVideoCarouselSlide[i].addEventListener("webkitTransitionEnd", introVideoTransitionCompleted, true);
+    $introVideoCarouselSlide[i].addEventListener("oTransitionEnd", introVideoTransitionCompleted, true);
+    $introVideoCarouselSlide[i].addEventListener("MSTransitionEnd", introVideoTransitionCompleted, true);
   }
 
-  $introVideoPrev.addEventListener(`click`, introVideoPrev, true);
-  $introVideoNext.addEventListener(`click`, introVideoNext, true);
+  $introVideoPrev.addEventListener("click", introVideoPrev, true);
+  $introVideoNext.addEventListener("click", introVideoNext, true);
 
-  window.addEventListener(`resize`, function(e) {
-    if (this.window.matchMedia(`(min-width: 768px)`).matches) {
+  window.addEventListener("resize", function(e) {
+    if (this.window.matchMedia("(min-width: 768px)").matches) {
       introVideoTransitionCompleted();
       introVideoMeasureWidth();
     }
@@ -424,19 +424,19 @@ function introVideoPrev() {
 
     for (let i = 0; i < introVideoAmount; i++) {
       let slide = $introVideoCarouselSlide[i];
-      slide.style.opacity = `1`;
+      slide.style.opacity = "1";
       slide.style.transform = `translateX(${introVideoCurrTransl[i] + introVideoMoveOffset}%)`;
       introVideoCurrTransl[i] = introVideoCurrTransl[i] + introVideoMoveOffset;
     }
 
     const outerSlide = $introVideoCarouselSlide[outerIndex];
     outerSlide.style.transform = `translateX(${introVideoCurrTransl[outerIndex] - (introVideoMoveOffset * introVideoAmount)}%)`;
-    outerSlide.style.opacity = `.25`;
-    outerSlide.style.zIndex = `0`;
-    outerSlide.addEventListener(`transitionend`, introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener(`webkitTransitionEnd`, introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener(`oTransitionEnd`, introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener(`MozTransitionEnd`, introVideoVisibleOnScreen, true);
+    outerSlide.style.opacity = ".25";
+    outerSlide.style.zIndex = "0";
+    outerSlide.addEventListener("transitionend", introVideoVisibleOnScreen, true);
+    outerSlide.addEventListener("webkitTransitionEnd", introVideoVisibleOnScreen, true);
+    outerSlide.addEventListener("oTransitionEnd", introVideoVisibleOnScreen, true);
+    outerSlide.addEventListener("MozTransitionEnd", introVideoVisibleOnScreen, true);
     introVideoCurrTransl[outerIndex] = introVideoCurrTransl[outerIndex] - (introVideoMoveOffset * introVideoAmount);
     
     introVideoActiveScreen(introVideoIndex, introVideoAmount, introVideoDirection);
@@ -455,19 +455,19 @@ function introVideoNext() {
 
     for(var i = 0; i < introVideoAmount; i++) {
       let slide = $introVideoCarouselSlide[i];
-      slide.style.opacity = `1`;
+      slide.style.opacity = "1";
       slide.style.transform = `translateX(${introVideoCurrTransl[i] - introVideoMoveOffset}%)`;
       introVideoCurrTransl[i] = introVideoCurrTransl[i] - introVideoMoveOffset;
     }
 
     const outerSlide = $introVideoCarouselSlide[outerIndex];
     outerSlide.style.transform = `translateX(${introVideoCurrTransl[outerIndex] + (introVideoMoveOffset * introVideoAmount)}%)`;
-    outerSlide.style.opacity = `.25`;
-    outerSlide.style.zIndex = `0`;
-    outerSlide.addEventListener(`transitionend`, introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener(`webkitTransitionEnd`, introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener(`oTransitionEnd`, introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener(`MozTransitionEnd`, introVideoVisibleOnScreen, true);
+    outerSlide.style.opacity = ".25";
+    outerSlide.style.zIndex = "0";
+    outerSlide.addEventListener("transitionend", introVideoVisibleOnScreen, true);
+    outerSlide.addEventListener("webkitTransitionEnd", introVideoVisibleOnScreen, true);
+    outerSlide.addEventListener("oTransitionEnd", introVideoVisibleOnScreen, true);
+    outerSlide.addEventListener("MozTransitionEnd", introVideoVisibleOnScreen, true);
     introVideoCurrTransl[outerIndex] = introVideoCurrTransl[outerIndex] + (introVideoMoveOffset * introVideoAmount);
 
     introVideoActiveScreen(introVideoIndex, introVideoAmount, introVideoDirection);
@@ -476,8 +476,8 @@ function introVideoNext() {
 }
 
 function introVideoVisibleOnScreen(e) {
-  e.target.style.opacity = `1`;
-  e.target.style.zIndex = `5`;
+  e.target.style.opacity = "1";
+  e.target.style.zIndex = "5";
 }
 
 function introVideoActiveScreen(introVideoIndex, introVideoAmount, introVideoDirection) {
@@ -494,10 +494,10 @@ function introVideoActiveScreen(introVideoIndex, introVideoAmount, introVideoDir
     $introVideoCarouselSlideVideos[introVideoMainIndex].play();
   }
 
-  $introVideoCarouselTitle[introVideoMainIndex].classList.add(`active`);
+  $introVideoCarouselTitle[introVideoMainIndex].classList.add("active");
   
   if (introVideoDirection) {
-    $introVideoCarouselTitle[introVideoPreIndex].classList.remove(`active`);
+    $introVideoCarouselTitle[introVideoPreIndex].classList.remove("active");
   }
 }
 
@@ -523,20 +523,20 @@ function introVideoPlayPauseToggle() {
     introVideoPlayEnabled = false;
     clearTimeout(introVideoSetTimeoutScreenChangeNext);
     introVideoSetTimeoutScreenChangeNext = null;
-    $introVideoPause.classList.remove(`active`);
-    $introVideoPlay.classList.add(`active`);
+    $introVideoPause.classList.remove("active");
+    $introVideoPlay.classList.add("active");
   } else {
     introVideoPlayEnabled = true;
     setTimeoutScreenChange(INTRO_VIDEO_SET_TIMEOUT_DELAY);
-    $introVideoPause.classList.add(`active`);
-    $introVideoPlay.classList.remove(`active`);
+    $introVideoPause.classList.add("active");
+    $introVideoPlay.classList.remove("active");
   }
 }
 
-$introVideoPlayPause.addEventListener('click', introVideoPlayPauseToggle);
+$introVideoPlayPause.addEventListener("click", introVideoPlayPauseToggle);
 
 // Fixed MenuBar
-const $headerDesktop = document.querySelector(`.header-desktop`);
+const $headerDesktop = document.querySelector(".header-desktop");
 const HEADER_ADD_CLASS_FIXED_DELAY = 100;
 
 let headerAddClassFixedSetTimeOut;
@@ -547,21 +547,21 @@ function headerAddClassFixed() {
   const scrollTop = document.scrollingElement.scrollTop;
 
   if (scrollTop > 180) {
-    $headerDesktop.classList.add(`fixed`);
+    $headerDesktop.classList.add("fixed");
   } else {
-    $headerDesktop.classList.remove(`fixed`);
+    $headerDesktop.classList.remove("fixed");
   }
 }
 
-window.addEventListener(`scroll`, function(event) {
+window.addEventListener("scroll", function(event) {
   if (!headerAddClassFixedSetTimeOut) {
     headerAddClassFixedSetTimeOut = setTimeout(headerAddClassFixed, HEADER_ADD_CLASS_FIXED_DELAY);
   }
 })
 
 // New Arrival Slider
-const $newArrivalSlider = document.querySelector(`.new-arrival-slider`);
-const $newArrivalSliderBarCurrent = document.querySelector(`.new-arrival-slider__bar-current`);
+const $newArrivalSlider = document.querySelector(".new-arrival-slider");
+const $newArrivalSliderBarCurrent = document.querySelector(".new-arrival-slider__bar-current");
 
 let newArrivalIsDown = false;
 let newArrivalStartX;
@@ -569,12 +569,12 @@ let newArrivalScrollLeft;
 
 const newArrivalEnd = () => {
 	newArrivalIsDown = false;
-  $newArrivalSlider.classList.remove('active');
+  $newArrivalSlider.classList.remove("active");
 }
 
 const newArrivalStart = (e) => {
   newArrivalIsDown = true;
-  $newArrivalSlider.classList.add('active');
+  $newArrivalSlider.classList.add("active");
   newArrivalStartX = e.pageX || e.touches[0].pageX - $newArrivalSlider.offsetLeft;
   newArrivalScrollLeft = $newArrivalSlider.scrollLeft;
 }
@@ -591,22 +591,22 @@ const newArrivalMove = (e) => {
   $newArrivalSliderBarCurrent.style.width = `${scrollLeftPercent}%`;
 }
 
-$newArrivalSlider.addEventListener('mousedown', newArrivalStart);
-$newArrivalSlider.addEventListener('touchstart', newArrivalStart);
+$newArrivalSlider.addEventListener("mousedown", newArrivalStart);
+$newArrivalSlider.addEventListener("touchstart", newArrivalStart);
 
-$newArrivalSlider.addEventListener('mousemove', newArrivalMove);
-$newArrivalSlider.addEventListener('touchmove', newArrivalMove);
+$newArrivalSlider.addEventListener("mousemove", newArrivalMove);
+$newArrivalSlider.addEventListener("touchmove", newArrivalMove);
 
-$newArrivalSlider.addEventListener('mouseleave', newArrivalEnd);
-$newArrivalSlider.addEventListener('mouseup', newArrivalEnd);
-$newArrivalSlider.addEventListener('touchend', newArrivalEnd);
+$newArrivalSlider.addEventListener("mouseleave", newArrivalEnd);
+$newArrivalSlider.addEventListener("mouseup", newArrivalEnd);
+$newArrivalSlider.addEventListener("touchend", newArrivalEnd);
 
 // Exclusives Carousel
-const $exclusivesCarousel = document.querySelector(`.exclusives-carousel`);
-const $exclusivesCarouselSeats = document.querySelectorAll(`.exclusives-carousel__seat`);
-const $exclusivesPrev = document.querySelector(`.exclusives__prev`);
-const $exclusivesNext = document.querySelector(`.exclusives__next`);
-const $exclusivesToggle = document.querySelectorAll(`.exclusives__nav-buttons .toggle`);
+const $exclusivesCarousel = document.querySelector(".exclusives-carousel");
+const $exclusivesCarouselSeats = document.querySelectorAll(".exclusives-carousel__seat");
+const $exclusivesPrev = document.querySelector(".exclusives__prev");
+const $exclusivesNext = document.querySelector(".exclusives__next");
+const $exclusivesToggle = document.querySelectorAll(".exclusives__nav-buttons .toggle");
 
 let exclusivesTransitionComplete = true;
 
@@ -615,10 +615,10 @@ function exclusivesTransitionCompleted() {
 }
 
 function exclusivesDelegate(criteria, listener) {
-  $exclusivesCarousel.addEventListener(`transitionend`, exclusivesTransitionCompleted, true);
-  $exclusivesCarousel.addEventListener(`webkitTransitionEnd`, exclusivesTransitionCompleted, true);
-  $exclusivesCarousel.addEventListener(`oTransitionEnd`, exclusivesTransitionCompleted, true);
-  $exclusivesCarousel.addEventListener(`MSTransitionEnd`, exclusivesTransitionCompleted, true);
+  $exclusivesCarousel.addEventListener("transitionend", exclusivesTransitionCompleted, true);
+  $exclusivesCarousel.addEventListener("webkitTransitionEnd", exclusivesTransitionCompleted, true);
+  $exclusivesCarousel.addEventListener("oTransitionEnd", exclusivesTransitionCompleted, true);
+  $exclusivesCarousel.addEventListener("MSTransitionEnd", exclusivesTransitionCompleted, true);
 
   return function(e) {
     let el = e.target;
@@ -635,7 +635,7 @@ function exclusivesDelegate(criteria, listener) {
 }
 
 function exclusivesToggleFilter(elem) {
-  return (elem instanceof HTMLElement) && elem.matches(`.toggle`);
+  return (elem instanceof HTMLElement) && elem.matches(".toggle");
 }
 
 function exclusivesToggleHandler(e) {
@@ -645,20 +645,20 @@ function exclusivesToggleHandler(e) {
     exclusivesSetTimeoutSwipeCarousel(EXCLUSIVES_SET_TIMEOUT_DELAY);
 
     let $newSeat;
-    const $el = document.querySelector(`.exclusives-is-ref`);
+    const $el = document.querySelector(".exclusives-is-ref");
     const $currSliderControl = e.delegateTarget;
 
-    $el.classList.remove(`exclusives-is-ref`);
+    $el.classList.remove("exclusives-is-ref");
 
-    if ($currSliderControl.getAttribute(`data-toggle`) === `next`) {
+    if ($currSliderControl.getAttribute("data-toggle") === "next") {
       $newSeat = exclusivesNext($el);
-      $exclusivesCarousel.classList.remove(`is-reversing`);
+      $exclusivesCarousel.classList.remove("is-reversing");
     } else {
       $newSeat = exclusivesPrev($el);
-      $exclusivesCarousel.classList.add(`is-reversing`);
+      $exclusivesCarousel.classList.add("is-reversing");
     }
 
-    $newSeat.classList.add(`exclusives-is-ref`);
+    $newSeat.classList.add("exclusives-is-ref");
     $newSeat.style.order = 1;
 
     for (let i = 2; i <= $exclusivesCarouselSeats.length; i++) {
@@ -666,10 +666,10 @@ function exclusivesToggleHandler(e) {
       $newSeat.style.order = i;
     }
 
-    $exclusivesCarousel.classList.remove(`is-set`);
+    $exclusivesCarousel.classList.remove("is-set");
 
     return setTimeout(function() {
-      return $exclusivesCarousel.classList.add(`is-set`);
+      return $exclusivesCarousel.classList.add("is-set");
     }, 50);
 
     function exclusivesNext($el) {
@@ -703,18 +703,18 @@ function exclusivesSwipeNext() {
   $exclusivesNext.dispatchEvent(event);
 }
 
-$exclusivesPrev.addEventListener(`click`, exclusivesDelegate(exclusivesToggleFilter, exclusivesToggleHandler));
-$exclusivesNext.addEventListener(`click`, exclusivesDelegate(exclusivesToggleFilter, exclusivesToggleHandler));
+$exclusivesPrev.addEventListener("click", exclusivesDelegate(exclusivesToggleFilter, exclusivesToggleHandler));
+$exclusivesNext.addEventListener("click", exclusivesDelegate(exclusivesToggleFilter, exclusivesToggleHandler));
 
-window.addEventListener(`resize`, function(e) {
-  if (this.window.matchMedia(`(min-width: 768px)`).matches) {
+window.addEventListener("resize", function(e) {
+  if (this.window.matchMedia("(min-width: 768px)").matches) {
     exclusivesTransitionCompleted();
     exclusivesSetTimeoutSwipeCarousel(EXCLUSIVES_SET_TIMEOUT_DELAY);
   }
 })
 
 // Accessories
-const $accessoriesMainVideo = document.querySelector(`.accessories-main-video video`);
+const $accessoriesMainVideo = document.querySelector(".accessories-main-video video");
 const ACCESSORIES_ADD_CLASS_FIXED_DELAY = 100;
 
 let accessoriesAddClassFixedSetTimeOut;
@@ -730,7 +730,7 @@ function accessoriesAddClassFixed() {
   }
 }
 
-window.addEventListener(`scroll`, function(event) {
+window.addEventListener("scroll", function(event) {
   if (!accessoriesAddClassFixedSetTimeOut) {
     accessoriesAddClassFixedSetTimeOut = setTimeout(accessoriesAddClassFixed, ACCESSORIES_ADD_CLASS_FIXED_DELAY);
   }
