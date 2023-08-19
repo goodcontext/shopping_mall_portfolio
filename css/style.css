@@ -1427,28 +1427,6 @@ header {
   background-color: #000;
 }
 
-.m-exclusives__swiper-button-next {
-  position: absolute;
-  margin-right: -5px;
-  margin-right: -.5rem;
-  box-sizing: border-box;
-}
-
-.m-exclusives__swiper-button-next::after {
-  color: #a0a0a0;
-}
-
-.m-exclusives__swiper-button-prev {
-  position: absolute;
-  margin-left: -5px;
-  margin-left: -.5rem;
-  box-sizing: border-box;
-}
-
-.m-exclusives__swiper-button-prev::after {
-  color: #a0a0a0;
-}
-
 .m-accessories-wrap {
   width: 360px;
   width: 36rem;

@@ -235,10 +235,6 @@ const mExclusivesSwiper = new Swiper(".m-exclusives__swiper", {
     el: ".m-exclusives__swiper-pagination-progressbar",
     clickable: true,
     type: "progressbar",
-  },  
-  navigation: {
-    nextEl: ".m-exclusives__swiper-button-next",
-    prevEl: ".m-exclusives__swiper-button-prev",
   },
 });
 
