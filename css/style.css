@@ -651,7 +651,7 @@ header {
   position: relative;
 }
 
-.m-shopping-exhibition__title p {
+.m-shopping-exhibition__title h2 {
   font-family: 'Noto Sans KR', '맑은 고딕', sans-serif;
   font-size: 18px;
   font-size: 1.8rem;
@@ -723,7 +723,7 @@ header {
   position: relative;
 }
 
-.m-top-searched-word__title p {
+.m-top-searched-word__title h2 {
   font-family: 'Noto Sans KR', '맑은 고딕', sans-serif;
   font-size: 18px;
   font-size: 1.8rem;
@@ -1258,7 +1258,7 @@ header {
   left: 3rem;
 }
 
-.m-new-arrival__title p {
+.m-new-arrival__title h2 {
   font-family: 'NewYork', arial, serif;
   font-size: 40px;
   font-size: 4rem;
@@ -1365,7 +1365,7 @@ header {
   left: 3rem;
 }
 
-.m-exclusives__title p {
+.m-exclusives__title h2 {
   font-family: 'NewYork', arial, serif;
   font-size: 40px;
   font-size: 4rem;
@@ -1443,7 +1443,7 @@ header {
   left: 3rem;
 }
 
-.m-accessories__title p {
+.m-accessories__title h2 {
   font-family: 'NewYork', arial, serif;
   font-size: 40px;
   font-size: 4rem;
@@ -1492,7 +1492,7 @@ header {
   left: 3rem;
 }
 
-.m-life__title p {
+.m-life__title h2 {
   font-family: 'NewYork', arial, serif;
   font-size: 40px;
   font-size: 4rem;
@@ -1524,7 +1524,7 @@ header {
   box-sizing: border-box;
 }
 
-.m-life-main-text__title p {
+.m-life-main-text__title h2 {
   font-family: 'Noto Sans KR', '맑은 고딕', sans-serif;
   font-size: 24px;
   font-size: 2.4rem;
@@ -2766,7 +2766,7 @@ header {
   top: 3rem;
 }
 
-.new-arrival__title p {
+.new-arrival__title h2 {
   font-family: 'NewYork', arial, serif;
   font-size: 80px;
   font-size: 8rem;
@@ -2951,7 +2951,7 @@ header {
   top: 3rem;
 }
 
-.exclusives__title p {
+.exclusives__title h2 {
   font-family: 'NewYork', arial, serif;
   font-size: 80px;
   font-size: 8rem;
@@ -3145,7 +3145,7 @@ header {
   top: 3rem;
 }
 
-.accessories__title p {
+.accessories__title h2 {
   font-family: 'NewYork', arial, serif;
   font-size: 80px;
   font-size: 8rem;
@@ -3256,7 +3256,7 @@ header {
   top: 3rem;
 }
 
-.life__title p {
+.life__title h2 {
   font-family: 'NewYork', arial, serif;
   font-size: 80px;
   font-size: 8rem;
