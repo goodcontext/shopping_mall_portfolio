@@ -1719,19 +1719,16 @@ header {
   width: 360px;
   width: 36rem;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-  row-gap: .8rem;
-  box-sizing: border-box;
   padding: 10px;
   padding: 1rem;
+  padding-bottom: 0;
 }
 
-.m-footer-details p {
+.m-footer-details address, .m-footer-details p {
   font-family: 'Noto Sans KR', '맑은 고딕', sans-serif;
   font-size: 12px;
   font-size: 1.2rem;
+  line-height: 1.6;
   color: #6a6a6a;
   white-space: nowrap;
 }
@@ -3564,15 +3561,12 @@ header {
   float: left;
 }
 
-.footer-details p {
-  height: 24px;
-  height: 2.4rem;
+.footer-details address, .footer-details p {
   font-family: 'Noto Sans KR', '맑은 고딕', sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
-  line-height: 24px;
-  line-height: 2.4rem;
   color: #171717;
+  line-height: 1.8;
 }
 
 .footer-social {
