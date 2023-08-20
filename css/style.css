@@ -1719,11 +1719,6 @@ header {
   width: 360px;
   width: 36rem;
   position: relative;
-}
-
-.m-footer-details > ul {
-  width: 360px;
-  width: 36rem;
   display: flex;
   flex-direction: column;
   row-gap: 8px;
@@ -1733,7 +1728,7 @@ header {
   padding: 1rem;
 }
 
-.m-footer-details > ul li p {
+.m-footer-details p {
   font-family: 'Noto Sans KR', '맑은 고딕', sans-serif;
   font-size: 12px;
   font-size: 1.2rem;
@@ -3569,7 +3564,7 @@ header {
   float: left;
 }
 
-.footer-details > ul > li {
+.footer-details p {
   height: 24px;
   height: 2.4rem;
   font-family: 'Noto Sans KR', '맑은 고딕', sans-serif;
