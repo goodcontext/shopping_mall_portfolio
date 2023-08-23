@@ -320,6 +320,14 @@ $bottomLeftNavArea.forEach((element) => {
   element.addEventListener("mouseenter", bottomLeftNavAreaAddClass);
 })
 
+$topNavArea.forEach((element) => {
+  element.addEventListener("focus", topNavAreaAddClass, false);
+})
+
+$bottomLeftNavArea.forEach((element) => {
+  element.addEventListener("focus", bottomLeftNavAreaAddClass, false);
+})
+
 $topNavAreaMouseEnter.addEventListener("mouseenter", bottomNavAreaRemoveClass);
 $topNavAreaMouseEvent.addEventListener("mouseenter", bottomNavAreaAddClass);
 $topNavAreaMouseEvent.addEventListener("mouseleave", bottomNavAreaRemoveClass);
