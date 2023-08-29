@@ -268,8 +268,8 @@ const mLifeSwiper = new Swiper(".m-life__swiper", {
 
 // GNB
 const $topNavArea = document.querySelectorAll(".top-nav-area>ul>li>a");
-const $bottomLeftNavArea = document.querySelectorAll(".bottom-left-nav-area>ul>li>a");
-const $bottomRightNavArea = document.querySelectorAll(".bottom-right-nav-area>ul>li");
+const $bottomLeftNavArea = document.querySelectorAll(".bottom-left-nav-area>a");
+const $bottomRightNavArea = document.querySelectorAll(".bottom-right-nav-area");
 const $bottomNavArea = document.querySelector(".bottom-nav-area");
 const $topNavAreaMouseEnter = document.querySelector(".top-nav-area--mouse-enter");
 const $topNavAreaMouseEvent = document.querySelector(".top-nav-area--mouse-event");
@@ -737,5 +737,18 @@ function accessoriesAddClassFixed() {
 window.addEventListener("scroll", function(event) {
   if (!accessoriesAddClassFixedSetTimeOut) {
     accessoriesAddClassFixedSetTimeOut = setTimeout(accessoriesAddClassFixed, ACCESSORIES_ADD_CLASS_FIXED_DELAY);
+  }
+})
+
+// When focused, scrolling
+const $sectionDesktopTitle = document.querySelectorAll(".section-desktop__title");
+
+$sectionDesktopTitle.forEach((element, index) => {
+  element.addEventListener("click", function() {
+    $sectionDesktop[index + 1].scrollIntoView({behavior: "smooth"});
+  });
+
+  return () => {
+    element.removeEventListener("click");
   }
 })
