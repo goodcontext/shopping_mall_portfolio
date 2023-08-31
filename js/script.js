@@ -1,64 +1,48 @@
-// mobile search screen & menu screen
-const $scrollWrapper = document.querySelector("#scroll-wrapper");
-const $mTopWrap = document.querySelector(".m-top-wrap");
-const $mSearchWrap = document.querySelector(".m-search-wrap");
-const $mMenuWrap = document.querySelector(".m-menu-wrap");
-const $mSearchIcon = document.querySelectorAll(".m-search-icon");
-const $mHamburgerIcon = document.querySelectorAll(".m-hamburger-icon");
+// mobile Where is the page to return from the search page
+const $mSearchIconIsMain = document.querySelector(".m-search-icon.is-main");
+const $mSearchIconIsMenu = document.querySelector(".m-search-icon.is-menu");
 const $mLeftArrow = document.querySelector(".m-left-arrow");
+
+let mReturnToMenuPage = false;
+
+if ($mSearchIconIsMain) {
+  $mSearchIconIsMain.querySelector("a").addEventListener("click", () => {
+    window.sessionStorage.setItem("mReturnToMenuPage", false);
+
+    return () => {
+      e.removeEventListener("click");
+    }
+  });
+}
+
+if ($mSearchIconIsMenu) {
+  $mSearchIconIsMenu.querySelector("a").addEventListener("click", () => {
+    window.sessionStorage.setItem("mReturnToMenuPage", true);
+
+    return () => {
+      e.removeEventListener("click");
+    }
+  });
+}
+
+if ($mLeftArrow) {
+  $mLeftArrow.querySelector("a").addEventListener("focus", (e) => {
+    mReturnToMenuPage = window.sessionStorage.getItem("mReturnToMenuPage");
+
+    if (mReturnToMenuPage === "true") {
+      e.target.setAttribute("href", "../m-menu/m-menu.html");
+    } else {
+      e.target.setAttribute("href", "../index.html");
+    }
+
+    return () => {
+      e.removeEventListener("focus");
+    }
+  });
+}
+
+// mobile search inputbox placeholder
 const $mSearchInputbox = document.querySelector(".m-search-input__inputbox");
-
-let mTopWrapClickedBefore = true;
-
-function disableScrollToggle() {
-  if (($mSearchWrap.classList.contains("active") || $mMenuWrap.classList.contains("active")) && window.matchMedia("(max-width: 767px)").matches) {
-    $scrollWrapper.classList.add("disable-scroll");
-  } else {
-    $scrollWrapper.classList.remove("disable-scroll");
-  }
-}
-
-function mSearchScreenActive(e) {  
-  $mSearchWrap.classList.add("active");
-
-  if (e.target.parentNode.classList.contains("is-top")) {
-    mTopWrapClickedBefore = true;
-    $mTopWrap.classList.remove("active");
-  } else {
-    mTopWrapClickedBefore = false;
-    $mMenuWrap.classList.remove("active");
-  }
-
-  disableScrollToggle();
-}
-
-function mTopWrapActive() {
-  $mTopWrap.classList.add("active");
-  $mSearchWrap.classList.remove("active");
-
-  disableScrollToggle();
-}
-
-function mMenuContainerActive() {
-  $mMenuWrap.classList.add("active");
-  $mSearchWrap.classList.remove("active");
-
-  disableScrollToggle();
-}
-
-function mMenuScreenToggle(e) {
-  if (e.target.parentNode.classList.contains("is-top")) {
-    $mMenuWrap.classList.add("active");
-    $mTopWrap.classList.remove("active");
-  } else {
-    mSearchScreenMenuIsOpen = false;
-
-    $mTopWrap.classList.add("active");
-    $mMenuWrap.classList.remove("active");
-  }
-  
-  disableScrollToggle();
-}
 
 function inputboxPlaceholderFocus() {
   $mSearchInputbox.placeholder = "검색어를 입력하세요.";
@@ -68,28 +52,10 @@ function inputboxPlaceholderBlur() {
   $mSearchInputbox.placeholder = "최대 18% 멤버십 페이백";
 }
 
-$mSearchIcon.forEach(element => {
-  element.addEventListener("click", mSearchScreenActive);
-});
-
-$mLeftArrow.addEventListener("click", function() {
-  if (mTopWrapClickedBefore) {
-    mTopWrapActive();
-  } else {
-    mMenuContainerActive();
-  }
-});
-
-$mHamburgerIcon.forEach(element => {
-  element.addEventListener("click", mMenuScreenToggle);
-});
-
-$mSearchInputbox.addEventListener("focus", inputboxPlaceholderFocus);
-$mSearchInputbox.addEventListener("blur", inputboxPlaceholderBlur);
-
-window.addEventListener("resize", function() {
-  disableScrollToggle();
-})
+if ($mSearchInputbox) {
+  $mSearchInputbox.addEventListener("focus", inputboxPlaceholderFocus);
+  $mSearchInputbox.addEventListener("blur", inputboxPlaceholderBlur);
+}
 
 //mobile top wrap bottom header
 const $mBottomHeaderMenuItem = document.querySelectorAll(".m-bottom-header__menu-item");
@@ -107,14 +73,14 @@ function mBottomHeaderMenuItemActivate(e) {
   if (index !== mBottomHeaderPreIndex) {
     $mBottomHeaderMenuItem[mBottomHeaderPreIndex]?.classList.remove("active");
   }
-  
+
   mBottomHeaderPreIndex = index;
 
   if (!toastMessagesIsShowing) {
     toastMessagesIsShowing = true;
     $toastMessages.classList.add("active");
 
-    setTimeout(function() {
+    setTimeout(function () {
       $toastMessages.classList.remove("active");
       toastMessagesIsShowing = false;
     }, 5100);
@@ -133,7 +99,9 @@ function mRecentSearchEllipsisContextMenuToggle() {
   $mRecentSearchContextMenu.classList.toggle("active")
 }
 
-$mRecentSearchEllipsis.addEventListener("click", mRecentSearchEllipsisContextMenuToggle);
+if ($mRecentSearchEllipsis) {
+  $mRecentSearchEllipsis.addEventListener("click", mRecentSearchEllipsisContextMenuToggle);
+}
 
 // mobile top searched word swiper
 const mTopSearchedWordSwiper = new Swiper(".m-top-searched-word__swiper", {
@@ -169,21 +137,25 @@ let mMenuPreIndex = 0;
 
 function mMenuRightSubmenuItemsAddClass(e) {
   const nodes = [...$mMenuLeftItem];
-  const index = nodes.indexOf(e.currentTarget);
+  const index = nodes.indexOf(e.currentTarget.parentNode);
 
-  e.currentTarget?.classList.add("active");
+  e.currentTarget?.parentNode?.classList.add("active");
   $mMenuRightSubmenuItems[index]?.classList.add("active");
 
   if (index !== mMenuPreIndex) {
     $mMenuRightSubmenuItems[mMenuPreIndex]?.classList.remove("active");
     $mMenuLeftItem[mMenuPreIndex]?.classList.remove("active");
   }
-  
+
   mMenuPreIndex = index;
 }
 
 $mMenuLeftItem.forEach(element => {
-  element.addEventListener("click", mMenuRightSubmenuItemsAddClass);
+  element.querySelector("a").addEventListener("focus", mMenuRightSubmenuItemsAddClass, false);
+
+  return () => {
+    element.removeEventListener("focus");
+  }
 });
 
 // mobile intro video swiper
@@ -205,7 +177,7 @@ const $mIntroVideoContainerVideos = document.querySelectorAll(".m-intro-video__v
 const $mIntroVideoContainerImages = document.querySelectorAll(".m-intro-video__video-container img");
 
 $mIntroVideoContainerVideos.forEach((element, index) => {
-  element.addEventListener("DOMContentLoaded", function() {
+  element.addEventListener("DOMContentLoaded", function () {
     $mIntroVideoContainerImages[index].style.display = "none";
   })
 })
@@ -251,7 +223,9 @@ const mAccessoriesVideoObserver = new IntersectionObserver((entries) => {
   });
 }, {});
 
-mAccessoriesVideoObserver.observe($mAccessoriesVideoContainer);
+if ($mAccessoriesVideoContainer) {
+  mAccessoriesVideoObserver.observe($mAccessoriesVideoContainer);
+}
 
 // mobile life&culture swiper
 const mLifeSwiper = new Swiper(".m-life__swiper", {
@@ -328,19 +302,26 @@ $bottomLeftNavArea.forEach((element) => {
   element.addEventListener("focus", bottomLeftNavAreaAddClass, false);
 })
 
-$topNavAreaMouseEnter.addEventListener("mouseenter", bottomNavAreaRemoveClass);
-$topNavAreaMouseEvent.addEventListener("mouseenter", bottomNavAreaAddClass);
-$topNavAreaMouseEvent.addEventListener("mouseleave", bottomNavAreaRemoveClass);
+if ($topNavAreaMouseEnter) {
+  $topNavAreaMouseEnter.addEventListener("mouseenter", bottomNavAreaRemoveClass);
+}
 
-$bottomNavArea.addEventListener("mouseenter", bottomNavAreaAddClass);
-$bottomNavArea.addEventListener("mouseleave", bottomNavAreaRemoveClass);
+if ($topNavAreaMouseEvent) {
+  $topNavAreaMouseEvent.addEventListener("mouseenter", bottomNavAreaAddClass);
+  $topNavAreaMouseEvent.addEventListener("mouseleave", bottomNavAreaRemoveClass);
+}
+
+if ($bottomNavArea) {
+  $bottomNavArea.addEventListener("mouseenter", bottomNavAreaAddClass);
+  $bottomNavArea.addEventListener("mouseleave", bottomNavAreaRemoveClass);
+}
 
 // Intro Video Carousel
 const $sectionDesktop = document.querySelectorAll(".section-desktop");
 const $introVideoCarousel = document.querySelector(".intro-video-carousel");
 const $introVideoCarouselSlide = document.querySelectorAll(".intro-video-carousel__slide");
 const $introVideoCarouselSlideVideos = document.querySelectorAll(".intro-video-carousel__slide > a > div > video");
-const $introVideoCarouselTitle = document.querySelectorAll(".intro-video-carousel__title");5
+const $introVideoCarouselTitle = document.querySelectorAll(".intro-video-carousel__title"); 5
 const $introVideoPrev = document.querySelector(".intro-video__prev");
 const $introVideoNext = document.querySelector(".intro-video__next");
 const $introVideoCountCurrent = document.querySelector(".nav-intro-video-count--current");
@@ -370,24 +351,27 @@ let introVideoSetTimeoutScreenChangeNext;
 let introVideoPlayEnabled = true;
 
 function introVideoTransitionCompleted() {
-    introVideoTranslationComplete = true;
+  introVideoTranslationComplete = true;
 }
 
 function introVideoMeasureWidth() {
   introVideoAmount = $introVideoCarouselSlide.length;
   introVideoMoveOffset = INTRO_VIDEO_SLIDE_WIDTH_PERCENT;
-  $introVideoCarousel.style.width = (introVideoAmount * introVideoMoveOffset) + "%";
+
+  if ($introVideoCarousel) {
+    $introVideoCarousel.style.width = (introVideoAmount * introVideoMoveOffset) + "%";
+  }
 
   setTimeoutScreenChange(INTRO_VIDEO_SET_TIMEOUT_DELAY);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   introVideoMeasureWidth();
-  
+
   introVideoActiveScreen(introVideoIndex, introVideoAmount, introVideoDirection);
   introVideoCount(introVideoIndex, parseInt(introVideoAmount / 2, 10));
 
-  for(let i = 0; i < introVideoAmount; i++) {
+  for (let i = 0; i < introVideoAmount; i++) {
     introVideoCurrTransl[i] = -introVideoMoveOffset;
     $introVideoCarouselSlide[i].addEventListener("transitionend", introVideoTransitionCompleted, true);
     $introVideoCarouselSlide[i].addEventListener("webkitTransitionEnd", introVideoTransitionCompleted, true);
@@ -395,10 +379,15 @@ document.addEventListener("DOMContentLoaded", function() {
     $introVideoCarouselSlide[i].addEventListener("MSTransitionEnd", introVideoTransitionCompleted, true);
   }
 
-  $introVideoPrev.addEventListener("click", introVideoPrev, true);
-  $introVideoNext.addEventListener("click", introVideoNext, true);
+  if ($introVideoPrev) {
+    $introVideoPrev.addEventListener("click", introVideoPrev, true);
+  }
 
-  window.addEventListener("resize", function(e) {
+  if ($introVideoNext) {
+    $introVideoNext.addEventListener("click", introVideoNext, true);
+  }
+
+  window.addEventListener("resize", function (e) {
     if (this.window.matchMedia("(min-width: 768px)").matches) {
       introVideoTransitionCompleted();
       introVideoMeasureWidth();
@@ -406,7 +395,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   setTimeoutScreenChange(INTRO_VIDEO_SET_TIMEOUT_DELAY);
-  
+
   // Exclusives Carousel start 
   exclusivesSetTimeoutSwipeCarousel(EXCLUSIVES_SET_TIMEOUT_DELAY);
   // Exclusives Carousel end
@@ -433,16 +422,18 @@ function introVideoPrev() {
       introVideoCurrTransl[i] = introVideoCurrTransl[i] + introVideoMoveOffset;
     }
 
-    const outerSlide = $introVideoCarouselSlide[outerIndex];
-    outerSlide.style.transform = `translateX(${introVideoCurrTransl[outerIndex] - (introVideoMoveOffset * introVideoAmount)}%)`;
-    outerSlide.style.opacity = ".25";
-    outerSlide.style.zIndex = "0";
-    outerSlide.addEventListener("transitionend", introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener("webkitTransitionEnd", introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener("oTransitionEnd", introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener("MozTransitionEnd", introVideoVisibleOnScreen, true);
-    introVideoCurrTransl[outerIndex] = introVideoCurrTransl[outerIndex] - (introVideoMoveOffset * introVideoAmount);
-    
+    if ($introVideoCarouselSlide[outerIndex]) {
+      const outerSlide = $introVideoCarouselSlide[outerIndex];
+      outerSlide.style.transform = `translateX(${introVideoCurrTransl[outerIndex] - (introVideoMoveOffset * introVideoAmount)}%)`;
+      outerSlide.style.opacity = ".25";
+      outerSlide.style.zIndex = "0";
+      outerSlide.addEventListener("transitionend", introVideoVisibleOnScreen, true);
+      outerSlide.addEventListener("webkitTransitionEnd", introVideoVisibleOnScreen, true);
+      outerSlide.addEventListener("oTransitionEnd", introVideoVisibleOnScreen, true);
+      outerSlide.addEventListener("MozTransitionEnd", introVideoVisibleOnScreen, true);
+      introVideoCurrTransl[outerIndex] = introVideoCurrTransl[outerIndex] - (introVideoMoveOffset * introVideoAmount);
+    }
+
     introVideoActiveScreen(introVideoIndex, introVideoAmount, introVideoDirection);
     setTimeoutScreenChange(INTRO_VIDEO_SET_TIMEOUT_DELAY);
   }
@@ -457,22 +448,24 @@ function introVideoNext() {
 
     introVideoCount(introVideoIndex, parseInt(introVideoAmount / 2, 10));
 
-    for(var i = 0; i < introVideoAmount; i++) {
+    for (var i = 0; i < introVideoAmount; i++) {
       let slide = $introVideoCarouselSlide[i];
       slide.style.opacity = "1";
       slide.style.transform = `translateX(${introVideoCurrTransl[i] - introVideoMoveOffset}%)`;
       introVideoCurrTransl[i] = introVideoCurrTransl[i] - introVideoMoveOffset;
     }
 
-    const outerSlide = $introVideoCarouselSlide[outerIndex];
-    outerSlide.style.transform = `translateX(${introVideoCurrTransl[outerIndex] + (introVideoMoveOffset * introVideoAmount)}%)`;
-    outerSlide.style.opacity = ".25";
-    outerSlide.style.zIndex = "0";
-    outerSlide.addEventListener("transitionend", introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener("webkitTransitionEnd", introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener("oTransitionEnd", introVideoVisibleOnScreen, true);
-    outerSlide.addEventListener("MozTransitionEnd", introVideoVisibleOnScreen, true);
-    introVideoCurrTransl[outerIndex] = introVideoCurrTransl[outerIndex] + (introVideoMoveOffset * introVideoAmount);
+    if ($introVideoCarouselSlide[outerIndex]) {
+      const outerSlide = $introVideoCarouselSlide[outerIndex];
+      outerSlide.style.transform = `translateX(${introVideoCurrTransl[outerIndex] + (introVideoMoveOffset * introVideoAmount)}%)`;
+      outerSlide.style.opacity = ".25";
+      outerSlide.style.zIndex = "0";
+      outerSlide.addEventListener("transitionend", introVideoVisibleOnScreen, true);
+      outerSlide.addEventListener("webkitTransitionEnd", introVideoVisibleOnScreen, true);
+      outerSlide.addEventListener("oTransitionEnd", introVideoVisibleOnScreen, true);
+      outerSlide.addEventListener("MozTransitionEnd", introVideoVisibleOnScreen, true);
+      introVideoCurrTransl[outerIndex] = introVideoCurrTransl[outerIndex] + (introVideoMoveOffset * introVideoAmount);
+    }
 
     introVideoActiveScreen(introVideoIndex, introVideoAmount, introVideoDirection);
     setTimeoutScreenChange(INTRO_VIDEO_SET_TIMEOUT_DELAY);
@@ -486,28 +479,40 @@ function introVideoVisibleOnScreen(e) {
 
 function introVideoActiveScreen(introVideoIndex, introVideoAmount, introVideoDirection) {
   introVideoMainIndex = (introVideoIndex + 2) % introVideoAmount;
-  
+
   if (introVideoDirection) {
     introVideoPreIndex = (introVideoMainIndex + introVideoDirection) % introVideoAmount;
-    
+
     if (introVideoPreIndex === -1) {
       introVideoPreIndex = introVideoAmount - 1;
     }
 
-    $introVideoCarouselSlideVideos[introVideoPreIndex].pause();
-    $introVideoCarouselSlideVideos[introVideoMainIndex].play();
+    if ($introVideoCarouselSlideVideos[introVideoPreIndex]) {
+      $introVideoCarouselSlideVideos[introVideoPreIndex].pause();
+    }
+
+    if ($introVideoCarouselSlideVideos[introVideoMainIndex]) {
+      $introVideoCarouselSlideVideos[introVideoMainIndex].play();
+    }
   }
 
-  $introVideoCarouselTitle[introVideoMainIndex].classList.add("active");
-  
-  if (introVideoDirection) {
+  if ($introVideoCarouselTitle[introVideoMainIndex]) {
+    $introVideoCarouselTitle[introVideoMainIndex].classList.add("active");
+  }
+
+  if (introVideoDirection && $introVideoCarouselTitle[introVideoPreIndex]) {
     $introVideoCarouselTitle[introVideoPreIndex].classList.remove("active");
   }
 }
 
 function introVideoCount(introVideoIndex, introVideoAmount) {
-  $introVideoCountCurrent.textContent = ((introVideoIndex + 1) % introVideoAmount) === 0 ? introVideoAmount : (introVideoIndex + 1) % introVideoAmount;
-  $introVideoCountTotal.textContent = introVideoAmount;
+  if ($introVideoCountCurrent) {
+    $introVideoCountCurrent.textContent = ((introVideoIndex + 1) % introVideoAmount) === 0 ? introVideoAmount : (introVideoIndex + 1) % introVideoAmount;
+  }
+
+  if ($introVideoCountTotal) {
+    $introVideoCountTotal.textContent = introVideoAmount;
+  }
 }
 
 function setTimeoutScreenChange(delay) {
@@ -537,7 +542,9 @@ function introVideoPlayPauseToggle() {
   }
 }
 
-$introVideoPlayPause.addEventListener("click", introVideoPlayPauseToggle);
+if ($introVideoPlayPause) {
+  $introVideoPlayPause.addEventListener("click", introVideoPlayPauseToggle);
+}
 
 // Fixed MenuBar
 const $headerDesktop = document.querySelector(".header-desktop");
@@ -557,7 +564,7 @@ function headerAddClassFixed() {
   }
 }
 
-window.addEventListener("scroll", function(event) {
+window.addEventListener("scroll", function (event) {
   if (!headerAddClassFixedSetTimeOut) {
     headerAddClassFixedSetTimeOut = setTimeout(headerAddClassFixed, HEADER_ADD_CLASS_FIXED_DELAY);
   }
@@ -572,7 +579,7 @@ let newArrivalStartX;
 let newArrivalScrollLeft;
 
 const newArrivalEnd = () => {
-	newArrivalIsDown = false;
+  newArrivalIsDown = false;
   $newArrivalSlider.classList.remove("active");
 }
 
@@ -584,7 +591,7 @@ const newArrivalStart = (e) => {
 }
 
 const newArrivalMove = (e) => {
-	if(!newArrivalIsDown) return;
+  if (!newArrivalIsDown) return;
 
   e.preventDefault();
   const x = e.pageX || e.touches[0].pageX - $newArrivalSlider.offsetLeft;
@@ -595,15 +602,17 @@ const newArrivalMove = (e) => {
   $newArrivalSliderBarCurrent.style.width = `${scrollLeftPercent}%`;
 }
 
-$newArrivalSlider.addEventListener("mousedown", newArrivalStart);
-$newArrivalSlider.addEventListener("touchstart", newArrivalStart);
+if ($newArrivalSlider) {
+  $newArrivalSlider.addEventListener("mousedown", newArrivalStart);
+  $newArrivalSlider.addEventListener("touchstart", newArrivalStart);
 
-$newArrivalSlider.addEventListener("mousemove", newArrivalMove);
-$newArrivalSlider.addEventListener("touchmove", newArrivalMove);
+  $newArrivalSlider.addEventListener("mousemove", newArrivalMove);
+  $newArrivalSlider.addEventListener("touchmove", newArrivalMove);
 
-$newArrivalSlider.addEventListener("mouseleave", newArrivalEnd);
-$newArrivalSlider.addEventListener("mouseup", newArrivalEnd);
-$newArrivalSlider.addEventListener("touchend", newArrivalEnd);
+  $newArrivalSlider.addEventListener("mouseleave", newArrivalEnd);
+  $newArrivalSlider.addEventListener("mouseup", newArrivalEnd);
+  $newArrivalSlider.addEventListener("touchend", newArrivalEnd);
+}
 
 // Exclusives Carousel
 const $exclusivesCarousel = document.querySelector(".exclusives-carousel");
@@ -624,13 +633,13 @@ function exclusivesDelegate(criteria, listener) {
   $exclusivesCarousel.addEventListener("oTransitionEnd", exclusivesTransitionCompleted, true);
   $exclusivesCarousel.addEventListener("MSTransitionEnd", exclusivesTransitionCompleted, true);
 
-  return function(e) {
+  return function (e) {
     let el = e.target;
     do {
       if (!criteria(el)) {
         continue;
       }
-      
+
       e.delegateTarget = el;
       listener.call(this, e);
       return;
@@ -672,7 +681,7 @@ function exclusivesToggleHandler(e) {
 
     $exclusivesCarousel.classList.remove("is-set");
 
-    return setTimeout(function() {
+    return setTimeout(function () {
       return $exclusivesCarousel.classList.add("is-set");
     }, 50);
 
@@ -704,13 +713,21 @@ function exclusivesSetTimeoutSwipeCarousel(delay) {
 
 function exclusivesSwipeNext() {
   let event = new Event("click");
-  $exclusivesNext.dispatchEvent(event);
+
+  if ($exclusivesNext) {
+    $exclusivesNext.dispatchEvent(event);
+  }
 }
 
-$exclusivesPrev.addEventListener("click", exclusivesDelegate(exclusivesToggleFilter, exclusivesToggleHandler));
-$exclusivesNext.addEventListener("click", exclusivesDelegate(exclusivesToggleFilter, exclusivesToggleHandler));
+if ($exclusivesPrev) {
+  $exclusivesPrev.addEventListener("click", exclusivesDelegate(exclusivesToggleFilter, exclusivesToggleHandler));
+}
 
-window.addEventListener("resize", function(e) {
+if ($exclusivesNext) {
+  $exclusivesNext.addEventListener("click", exclusivesDelegate(exclusivesToggleFilter, exclusivesToggleHandler));
+}
+
+window.addEventListener("resize", function (e) {
   if (this.window.matchMedia("(min-width: 768px)").matches) {
     exclusivesTransitionCompleted();
     exclusivesSetTimeoutSwipeCarousel(EXCLUSIVES_SET_TIMEOUT_DELAY);
@@ -734,21 +751,21 @@ function accessoriesAddClassFixed() {
   }
 }
 
-window.addEventListener("scroll", function(event) {
+window.addEventListener("scroll", function (event) {
   if (!accessoriesAddClassFixedSetTimeOut) {
     accessoriesAddClassFixedSetTimeOut = setTimeout(accessoriesAddClassFixed, ACCESSORIES_ADD_CLASS_FIXED_DELAY);
   }
 })
 
 // When focused, scrolling
-const $sectionDesktopTitle = document.querySelectorAll(".section-desktop__title");
+const $sectionDesktopTitle = document.querySelectorAll(".section-desktop__title>a");
 
 $sectionDesktopTitle.forEach((element, index) => {
-  element.addEventListener("click", function() {
-    $sectionDesktop[index + 1].scrollIntoView({behavior: "smooth"});
-  });
+  element.addEventListener("focus", function () {
+    $sectionDesktop[index + 1].scrollIntoView({ behavior: "smooth" });
+  }, false);
 
   return () => {
-    element.removeEventListener("click");
+    element.removeEventListener("focus");
   }
 })

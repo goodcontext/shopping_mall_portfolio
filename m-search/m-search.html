@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+  <title>shopping mall portfolio</title>
+
+  <link href="../css/reset.min.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link href="../css/style.css" type="text/css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
+</head>
+
+<body id="scroll-wrapper">
+  <div id="wrap">
+    <section class="m-section-intro section-mobile">
+      <h2 class="hide">Intro</h2>
+      <header class="m-header">
+        <div class="m-top-wrap active">
+          <div class="m-search-wrap">
+            <div class="m-search-background"></div>
+            <div class="m-search-header">
+              <ul>
+                <li class="m-left-arrow">
+                  <a href="../m-menu/m-menu.html">
+                    <img src="../images/icon/mobile_left_arrow.webp" alt="mobile left arrow">
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);">
+                    <img src="../images/mobile/mobile_logo.webp" alt="BRAND">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="m-search-container">
+              <ul>
+                <li>
+                  <div class="m-search-input">
+                    <input type="text" class="m-search-input__inputbox" name="m-search-input"
+                      placeholder="최대 18% 멤버십 페이백">
+                    <button onclick="return false" class="m-search-input__button">
+                      <img src="../images/icon/mobile_search_icon.webp" alt="mobile search">
+                    </button>
+                  </div>
+                </li>
+                <li>
+                  <div class="m-recent-search-container">
+                    <div class="m-recent-search__title">
+                      <span>최근 검색어</span>
+                      <button class="m-recent-search__ellipsis">
+                        <img src="../images/icon/mobile_ellipsis_icon.webp" alt="mobile ellipsis">
+                      </button>
+                    </div>
+                    <div class="m-recent-search__contents">
+                      <p>최근 검색어가 없습니다.</p>
+                      <div class="m-recent-search__context-menu">
+                        <ul>
+                          <li>
+                            <button onclick="return false">
+                              <span>선택 삭제</span>
+                            </button>
+                          </li>
+                          <li>
+                            <button onclick="return false">
+                              <span>전체 삭제</span>
+                            </button>
+                          </li>
+                          <li>
+                            <button onclick="return false">
+                              <span>자동저장 끄기</span>
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="m-shopping-exhibition-container">
+                    <div class="m-shopping-exhibition__title">
+                      <p>쇼핑 기획전</p>
+                    </div>
+                    <div class="m-shopping-exhibition__contents">
+                      <ul class="m-shopping-exhibition__contents-slider">
+                        <li>
+                          <ul class="m-shopping-exhibition__contents-rows">
+                            <li>
+                              <a href="javascript:void(0)">
+                                <span>화끈한 혜택으로 채우는 여름파우치</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="javascript:void(0)">
+                                <span>다양한 컬러의 강렬한 유혹</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="m-shopping-exhibition__contents-rows">
+                            <li>
+                              <a href="javascript:void(0)">
+                                <span>바디-헤어-페이스 컬렉션</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="javascript:void(0)">
+                                <span>유럽 프리미엄 브랜드의 품격</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <ul class="m-shopping-exhibition__contents-rows">
+                            <li>
+                              <a href="javascript:void(0)">
+                                <span>다이버 워치에 우아함을 선사하다</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="m-top-searched-word-container">
+                    <div class="m-top-searched-word__title">
+                      <p>인기 검색어</p>
+                    </div>
+                    <div class="m-top-searched-word__contents">
+                      <div class="m-top-searched-word__swiper swiper">
+                        <ul class="m-top-searched-word__swiper-wrapper swiper-wrapper">
+                          <li class="m-top-searched-word__swiper-slide swiper-slide">
+                            <ul class="m-top-searched-word__rank-container">
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">1</span>
+                                  <span class="m-top-searched-word__rank-word">브랜드 가방</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_horizontal_line.webp" alt="mobile horizontal line">
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">2</span>
+                                  <span class="m-top-searched-word__rank-word">브랜드 퀼티드</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_up_arrow.webp" alt="mobile up arrow">
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">3</span>
+                                  <span class="m-top-searched-word__rank-word">브랜드</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_down_arrow.webp" alt="mobile down arrow">
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">4</span>
+                                  <span class="m-top-searched-word__rank-word">퀼티드</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_new_icon.webp" alt="mobile new icon">
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">5</span>
+                                  <span class="m-top-searched-word__rank-word">Brand 가방</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_horizontal_line.webp" alt="mobile horizontal line">
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">6</span>
+                                  <span class="m-top-searched-word__rank-word">브랜드 시계</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_horizontal_line.webp" alt="mobile horizontal line">
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="m-top-searched-word__swiper-slide swiper-slide">
+                            <ul class="m-top-searched-word__rank-container">
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">7</span>
+                                  <span class="m-top-searched-word__rank-word">브랜드 벨트</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_horizontal_line.webp" alt="mobile horizontal line">
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">8</span>
+                                  <span class="m-top-searched-word__rank-word">향수</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_up_arrow.webp" alt="mobile up arrow">
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">9</span>
+                                  <span class="m-top-searched-word__rank-word">시계</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_new_icon.webp" alt="mobile new icon">
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">10</span>
+                                  <span class="m-top-searched-word__rank-word">Brand 벨트</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_down_arrow.webp" alt="mobile down arrow">
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">11</span>
+                                  <span class="m-top-searched-word__rank-word">가방</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_up_arrow.webp" alt="mobile up arrow">
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="m-top-searched-word__rank">
+                                <a href="javascript:void(0)">
+                                  <span class="m-top-searched-word__rank-number">12</span>
+                                  <span class="m-top-searched-word__rank-word">bag</span>
+                                  <span class="m-top-searched-word__rank-step">
+                                    <img src="../images/icon/mobile_horizontal_line.webp" alt="mobile horizontal line">
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        <div class="m-top-searched-word__swiper-pagination"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="m-banner-container">
+                    <div class="m-banner__swiper swiper">
+                      <ul class="m-banner__swiper-wrapper swiper-wrapper">
+                        <li class="m-banner__swiper-slide m-banner__swiper-slide-left swiper-slide">
+                          <div class="m-banner__swiper-slide-title">
+                            <p>신규 회원을 위한</p>
+                            <p>10% + 10% 더블 쿠폰 혜택</p>
+                          </div>
+                          <div class="m-banner__swiper-slide-image m-banner__swiper-slide-image-left">
+                            <img src="../images/mobile/mobile_search_screen_banner_image_left.webp"
+                              alt="mobile search screen banner image left">
+                          </div>
+                        </li>
+                        <li class="m-banner__swiper-slide m-banner__swiper-slide-right swiper-slide">
+                          <div class="m-banner__swiper-slide-title">
+                            <p>15% 쇼핑백 혜택</p>
+                            <p>PRE-SUMMER 준비하세요.</p>
+                          </div>
+                          <div class="m-banner__swiper-slide-image m-banner__swiper-slide-image-right">
+                            <img src="../images/mobile/mobile_search_screen_banner_image_right.webp"
+                              alt="mobile search screen banner image right">
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="m-banner__swiper-pagination"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+  </div>
+</body>
+
+</html>
