@@ -8,20 +8,12 @@ let mReturnToMenuPage = false;
 if ($mSearchIconIsMain) {
   $mSearchIconIsMain.querySelector("a").addEventListener("click", () => {
     window.sessionStorage.setItem("mReturnToMenuPage", false);
-
-    return () => {
-      e.removeEventListener("click");
-    }
   });
 }
 
 if ($mSearchIconIsMenu) {
   $mSearchIconIsMenu.querySelector("a").addEventListener("click", () => {
     window.sessionStorage.setItem("mReturnToMenuPage", true);
-
-    return () => {
-      e.removeEventListener("click");
-    }
   });
 }
 
@@ -33,10 +25,6 @@ if ($mLeftArrow) {
       e.target.setAttribute("href", "../m-menu/m-menu.html");
     } else {
       e.target.setAttribute("href", "../index.html");
-    }
-
-    return () => {
-      e.removeEventListener("focus");
     }
   });
 }
@@ -152,10 +140,6 @@ function mMenuRightSubmenuItemsAddClass(e) {
 
 $mMenuLeftItem.forEach(element => {
   element.querySelector("a").addEventListener("focus", mMenuRightSubmenuItemsAddClass, false);
-
-  return () => {
-    element.removeEventListener("focus");
-  }
 });
 
 // mobile intro video swiper
@@ -321,7 +305,7 @@ const $sectionDesktop = document.querySelectorAll(".section-desktop");
 const $introVideoCarousel = document.querySelector(".intro-video-carousel");
 const $introVideoCarouselSlide = document.querySelectorAll(".intro-video-carousel__slide");
 const $introVideoCarouselSlideVideos = document.querySelectorAll(".intro-video-carousel__slide > a > div > video");
-const $introVideoCarouselTitle = document.querySelectorAll(".intro-video-carousel__title"); 5
+const $introVideoCarouselTitle = document.querySelectorAll(".intro-video-carousel__title");
 const $introVideoPrev = document.querySelector(".intro-video__prev");
 const $introVideoNext = document.querySelector(".intro-video__next");
 const $introVideoCountCurrent = document.querySelector(".nav-intro-video-count--current");
@@ -764,8 +748,4 @@ $sectionDesktopTitle.forEach((element, index) => {
   element.addEventListener("focus", function () {
     $sectionDesktop[index + 1].scrollIntoView({ behavior: "smooth" });
   }, false);
-
-  return () => {
-    element.removeEventListener("focus");
-  }
 })
